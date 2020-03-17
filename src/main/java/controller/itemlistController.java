@@ -88,30 +88,30 @@ public class itemlistController {
 //            webcamPane.getChildren().clear();
 //            webcamPane.getChildren().add(swingNode);
 //        });
-        JFrame jFrame = new JFrame();
-        jFrame.add(webcamPanel);
-        jFrame.pack();
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setLocationRelativeTo(null);
-        jFrame.setVisible(true);
-
-        do {
-            try {
-                BufferedImage image = webcam.getImage();
-                source = new BufferedImageLuminanceSource(image);
-                BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
-                Result result = new MultiFormatReader().decode(bitmap);
-                if(result.getText() != null) {
-                    System.out.println(result.getText());
-                    webcam.close();
-                    break;
-                }
-
-            }catch (NotFoundException e ) {
-                //pass
-            }
-
-        } while(true);
+//        JFrame jFrame = new JFrame();
+//        jFrame.add(webcamPanel);
+//        jFrame.pack();
+//        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        jFrame.setLocationRelativeTo(null);
+//        jFrame.setVisible(true);
+//
+//        do {
+//            try {
+//                BufferedImage image = webcam.getImage();
+//                source = new BufferedImageLuminanceSource(image);
+//                BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
+//                Result result = new MultiFormatReader().decode(bitmap);
+//                if(result.getText() != null) {
+//                    System.out.println(result.getText());
+//                    webcam.close();
+//                    break;
+//                }
+//
+//            }catch (NotFoundException e ) {
+//                //pass
+//            }
+//
+//        } while(true);
 
     }
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.billController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.billController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1436.0" />
       <TextField layoutX="599.0" layoutY="14.0" prefHeight="111.0" prefWidth="144.0" style="-fx-background-color: #B2BB1E;" text="Bill">
@@ -16,17 +17,17 @@
             <Font size="58.0" />
          </font>
       </TextField>
-      <TextField layoutX="785.0" layoutY="347.0" prefHeight="77.0" prefWidth="477.0" text="Total">
+      <TextField layoutX="922.0" layoutY="347.0" prefHeight="77.0" prefWidth="340.0" text="Total">
          <font>
             <Font size="35.0" />
          </font>
       </TextField>
-      <TextField layoutX="785.0" layoutY="435.0" prefHeight="77.0" prefWidth="477.0" text="Receive">
+      <TextField layoutX="922.0" layoutY="435.0" prefHeight="77.0" prefWidth="340.0" text="Receive">
          <font>
             <Font size="35.0" />
          </font>
       </TextField>
-      <TextField layoutX="785.0" layoutY="535.0" prefHeight="77.0" prefWidth="477.0" text="Change">
+      <TextField layoutX="922.0" layoutY="535.0" prefHeight="77.0" prefWidth="340.0" text="Change">
          <font>
             <Font size="35.0" />
          </font>
@@ -47,10 +48,19 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <TextField layoutX="785.0" layoutY="259.0" prefHeight="77.0" prefWidth="477.0" text="subtotal">
+      <TextField layoutX="922.0" layoutY="259.0" prefHeight="77.0" prefWidth="340.0" text="subtotal">
          <font>
             <Font size="35.0" />
          </font>
       </TextField>
+      <Button layoutX="785.0" layoutY="669.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="477.0" style="-fx-background-color: brown;" text="Gift Card" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <Label layoutX="840.0" layoutY="289.0" text="Subtotal" />
+      <Label layoutX="840.0" layoutY="377.0" text="Total" />
+      <Label layoutX="840.0" layoutY="465.0" text="Receive" />
+      <Label layoutX="840.0" layoutY="565.0" text="Change" />
    </children>
 </AnchorPane>

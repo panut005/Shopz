@@ -31,17 +31,29 @@
             <TableColumn fx:id="price" onEditCommit="#onEditPrice" prefWidth="113.0" text="Price" />
          </columns>
       </TableView>
-      <TextField fx:id="textID" layoutX="1043.0" layoutY="428.0" promptText="ID" />
-      <TextField fx:id="textName" layoutX="1042.0" layoutY="466.0" promptText="Name" />
-      <TextField fx:id="textAmount" layoutX="1042.0" layoutY="505.0" promptText="Amount" />
-      <TextField fx:id="textPrice" layoutX="1042.0" layoutY="545.0" promptText="Price" />
-      <Button fx:id="addBtn" layoutX="1040.0" layoutY="699.0" mnemonicParsing="false" onAction="#handleAddbtn" text="Add" />
-      <Button fx:id="deletBtn" layoutX="1145.0" layoutY="698.0" mnemonicParsing="false" onAction="#deletHandle" text="Detete" />
-      <Button fx:id="loadPictureBtn" layoutX="1039.0" layoutY="642.0" mnemonicParsing="false" onAction="#loadPicture" text="Load Picture" />
-      <AnchorPane fx:id="webcamPane" layoutX="1017.0" layoutY="223.0" prefHeight="200.0" prefWidth="200.0" />
-      <Label layoutX="967.0" layoutY="433.0" text="Product ID" />
-      <Label layoutX="957.0" layoutY="467.0" text="Product Name" />
-      <Label layoutX="976.0" layoutY="511.0" text="Amount" />
-      <Label layoutX="983.0" layoutY="546.0" text="Price" />
+      <TextField fx:id="textID" layoutX="1099.0" layoutY="403.0" prefHeight="46.0" prefWidth="185.0" promptText="ID" />
+      <TextField fx:id="textName" layoutX="1099.0" layoutY="460.0" prefHeight="46.0" prefWidth="185.0" promptText="Name" />
+      <TextField fx:id="textAmount" layoutX="1099.0" layoutY="522.0" prefHeight="46.0" prefWidth="185.0" promptText="Amount" />
+      <TextField fx:id="textPrice" layoutX="1099.0" layoutY="580.0" prefHeight="46.0" prefWidth="185.0" promptText="Price" />
+      <Button fx:id="addBtn" layoutX="1078.0" layoutY="698.0" mnemonicParsing="false" onAction="#handleAddbtn" text="Add" />
+      <Button fx:id="deletBtn" layoutX="1183.0" layoutY="697.0" mnemonicParsing="false" onAction="#deletHandle" text="Detete" />
+      <Button fx:id="loadPictureBtn" layoutX="1077.0" layoutY="641.0" mnemonicParsing="false" onAction="#loadPicture" text="Load Picture" />
+      <AnchorPane fx:id="webcamPane" layoutX="1023.0" layoutY="159.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="897.0" layoutY="411.0" text="Product ID">
+         <font>
+            <Font size="37.0" />
+         </font></Label>
+      <Label layoutX="854.0" layoutY="467.0" text="Product Name">
+         <font>
+            <Font size="37.0" />
+         </font></Label>
+      <Label layoutX="918.0" layoutY="529.0" text="Amount">
+         <font>
+            <Font size="37.0" />
+         </font></Label>
+      <Label layoutX="940.0" layoutY="587.0" text="Price">
+         <font>
+            <Font size="37.0" />
+         </font></Label>
    </children>
 </AnchorPane>

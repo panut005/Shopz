@@ -24,7 +24,7 @@ public class BarcodeScannerApplication extends Application {
             Parent root = fxmlLoader.load();
            // ApplicationRootController controller = fxmlLoader.getController();
             Scene scene = new Scene(root, 1365, 1054);
-            primaryStage.setTitle("sssssssssssssssssssssss");
+            primaryStage.setTitle("Camshier");
             primaryStage.setScene(scene);
 //            primaryStage.setResizable(false);
 //            primaryStage.setOnCloseRequest(event -> {

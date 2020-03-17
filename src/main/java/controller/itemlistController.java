@@ -74,11 +74,11 @@ public class itemlistController {
         name.setCellFactory(TextFieldTableCell.forTableColumn());
         quantity.setCellFactory(TextFieldTableCell.forTableColumn());
         price.setCellFactory(TextFieldTableCell.forTableColumn());
-        webcamPane =new AnchorPane();
-        Webcam webcam = Webcam.getDefault();   //Generate Webcam Object
-        webcam.setViewSize(new Dimension(640,480));
-        WebcamPanel webcamPanel = new WebcamPanel(webcam,true);
-        webcamPanel.setMirrored(false);
+//        webcamPane =new AnchorPane();
+//        Webcam webcam = Webcam.getDefault();   //Generate Webcam Object
+//        webcam.setViewSize(new Dimension(640,480));
+//        WebcamPanel webcamPanel = new WebcamPanel(webcam,true);
+//        webcamPanel.setMirrored(false);
 //        SwingUtilities.invokeLater(() -> {
 //            if(webcamPanel != null) {
 //                swingNode.setContent(webcamPanel);

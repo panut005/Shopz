@@ -17,17 +17,17 @@
             <Font size="58.0" />
          </font>
       </TextField>
-      <TextField layoutX="922.0" layoutY="347.0" prefHeight="77.0" prefWidth="340.0" text="Total">
+      <TextField layoutX="922.0" layoutY="347.0" prefHeight="77.0" prefWidth="340.0" promptText="Total">
          <font>
             <Font size="35.0" />
          </font>
       </TextField>
-      <TextField layoutX="922.0" layoutY="435.0" prefHeight="77.0" prefWidth="340.0" text="Receive">
+      <TextField layoutX="922.0" layoutY="435.0" prefHeight="77.0" prefWidth="340.0" promptText="Receive">
          <font>
             <Font size="35.0" />
          </font>
       </TextField>
-      <TextField layoutX="922.0" layoutY="535.0" prefHeight="77.0" prefWidth="340.0" text="Change">
+      <TextField layoutX="922.0" layoutY="535.0" prefHeight="77.0" prefWidth="340.0" promptText="Change">
          <font>
             <Font size="35.0" />
          </font>
@@ -48,7 +48,7 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <TextField layoutX="922.0" layoutY="259.0" prefHeight="77.0" prefWidth="340.0" text="subtotal">
+      <TextField layoutX="922.0" layoutY="259.0" prefHeight="77.0" prefWidth="340.0" promptText="Subtotal">
          <font>
             <Font size="35.0" />
          </font>
@@ -58,9 +58,25 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <Label layoutX="840.0" layoutY="289.0" text="Subtotal" />
-      <Label layoutX="840.0" layoutY="377.0" text="Total" />
-      <Label layoutX="840.0" layoutY="465.0" text="Receive" />
-      <Label layoutX="840.0" layoutY="565.0" text="Change" />
+      <Label layoutX="785.0" layoutY="275.0" text="Subtotal">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="811.0" layoutY="363.0" text="Total">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="789.0" layoutY="451.0" text="Receive">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="789.0" layoutY="551.0" text="Change">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

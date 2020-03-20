@@ -293,7 +293,7 @@ public class ApplicationRootController implements Initializable{
         }
         double p =product.getPrice();
         double a =p*q;
-        System.out.println(product.getName()+p+q+a);
+
         arrayList.add(new Item(product.getName(),p,q,a));
         showTable(arrayList);
 

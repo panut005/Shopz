@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationRootController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationRootController">
    <children>
       <TableView fx:id="tableView" layoutX="845.0" layoutY="169.0" prefHeight="561.0" prefWidth="447.0">
          <columns>
@@ -45,7 +45,7 @@
       <TextField fx:id="search" layoutX="551.0" layoutY="802.0" promptText="ID  item" />
       <Button fx:id="add" layoutX="717.0" layoutY="802.0" mnemonicParsing="false" text="add" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1427.0" />
-      <Text fx:id="total" layoutX="987.0" layoutY="766.0" strokeType="OUTSIDE" strokeWidth="0.0" text="total price : 0.00 bath" textAlignment="RIGHT" wrappingWidth="304.455078125">
+      <Text fx:id="total" layoutX="987.0" layoutY="766.0" strokeType="OUTSIDE" strokeWidth="0.0" text="total price : 0.00 baht" textAlignment="RIGHT" wrappingWidth="304.455078125">
          <font>
             <Font size="26.0" />
          </font>

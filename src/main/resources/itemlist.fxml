@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemlistController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemlistController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1420.0" />
       <Text fill="WHITE" layoutX="583.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item List">
@@ -33,27 +33,27 @@
       </TableView>
       <TextField fx:id="textID" layoutX="1099.0" layoutY="403.0" prefHeight="46.0" prefWidth="185.0" promptText="ID" />
       <TextField fx:id="textName" layoutX="1099.0" layoutY="460.0" prefHeight="46.0" prefWidth="185.0" promptText="Name" />
-      <TextField fx:id="textAmount" layoutX="1099.0" layoutY="522.0" prefHeight="46.0" prefWidth="185.0" promptText="Amount" />
+      <TextField fx:id="textAmount" layoutX="1099.0" layoutY="522.0" prefHeight="46.0" prefWidth="185.0" promptText="Quantity" />
       <TextField fx:id="textPrice" layoutX="1099.0" layoutY="580.0" prefHeight="46.0" prefWidth="185.0" promptText="Price" />
-      <Button fx:id="addBtn" layoutX="1078.0" layoutY="698.0" mnemonicParsing="false" onAction="#handleAddbtn" text="Add" />
-      <Button fx:id="deletBtn" layoutX="1183.0" layoutY="697.0" mnemonicParsing="false" onAction="#deletHandle" text="Detete" />
-      <Button fx:id="loadPictureBtn" layoutX="1077.0" layoutY="641.0" mnemonicParsing="false" onAction="#loadPicture" text="Load Picture" />
+      <Button fx:id="addBtn" layoutX="1097.0" layoutY="697.0" mnemonicParsing="false" onAction="#handleAddbtn" text="Add" />
+      <Button fx:id="deletBtn" layoutX="1153.0" layoutY="697.0" mnemonicParsing="false" onAction="#deletHandle" text="Detete" />
+      <Button fx:id="loadPictureBtn" layoutX="1097.0" layoutY="638.0" mnemonicParsing="false" onAction="#loadPicture" text="Load Picture" />
       <AnchorPane fx:id="webcamPane" layoutX="1023.0" layoutY="159.0" prefHeight="200.0" prefWidth="200.0" />
-      <Label layoutX="897.0" layoutY="411.0" text="Product ID">
+      <Label layoutX="933.0" layoutY="406.0" text="Product ID:">
          <font>
-            <Font size="37.0" />
+            <Font size="28.0" />
          </font></Label>
-      <Label layoutX="854.0" layoutY="467.0" text="Product Name">
+      <Label layoutX="889.0" layoutY="463.0" text="Product Name:">
          <font>
-            <Font size="37.0" />
+            <Font size="28.0" />
          </font></Label>
-      <Label layoutX="918.0" layoutY="529.0" text="Amount">
+      <Label layoutX="967.0" layoutY="525.0" text="Quantity:">
          <font>
-            <Font size="37.0" />
+            <Font size="28.0" />
          </font></Label>
-      <Label layoutX="940.0" layoutY="587.0" text="Price">
+      <Label layoutX="1002.0" layoutY="583.0" text="Price:">
          <font>
-            <Font size="37.0" />
+            <Font size="28.0" />
          </font></Label>
    </children>
 </AnchorPane>

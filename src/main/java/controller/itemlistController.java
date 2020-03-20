@@ -44,7 +44,7 @@ public class itemlistController {
     @FXML
     private TextField textID,textName,textAmount, textPrice;
     @FXML
-    private Button addBtn,deletBtn;
+    private Button addBtn,deletBtn,buttonBack;
     @FXML
     private Label eID,eName,eAmount,ePrice;
     @FXML private ImageView upload;
@@ -55,7 +55,6 @@ public class itemlistController {
 
     private File file;
     private String srcImage="";
-    private Button buttonBack;
     final SwingNode swingNode = new SwingNode();
 
 
@@ -74,44 +73,7 @@ public class itemlistController {
         name.setCellFactory(TextFieldTableCell.forTableColumn());
         quantity.setCellFactory(TextFieldTableCell.forTableColumn());
         price.setCellFactory(TextFieldTableCell.forTableColumn());
-//        webcamPane =new AnchorPane();
-//        Webcam webcam = Webcam.getDefault();   //Generate Webcam Object
-//        webcam.setViewSize(new Dimension(640,480));
-//        WebcamPanel webcamPanel = new WebcamPanel(webcam,true);
-//        webcamPanel.setMirrored(false);
-//        SwingUtilities.invokeLater(() -> {
-//            if(webcamPanel != null) {
-//                swingNode.setContent(webcamPanel);
-//            }
-//        });
-//        Platform.runLater(() -> {
-//            webcamPane.getChildren().clear();
-//            webcamPane.getChildren().add(swingNode);
-//        });
-//        JFrame jFrame = new JFrame();
-//        jFrame.add(webcamPanel);
-//        jFrame.pack();
-//        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        jFrame.setLocationRelativeTo(null);
-//        jFrame.setVisible(true);
-//
-//        do {
-//            try {
-//                BufferedImage image = webcam.getImage();
-//                source = new BufferedImageLuminanceSource(image);
-//                BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
-//                Result result = new MultiFormatReader().decode(bitmap);
-//                if(result.getText() != null) {
-//                    System.out.println(result.getText());
-//                    webcam.close();
-//                    break;
-//                }
-//
-//            }catch (NotFoundException e ) {
-//                //pass
-//            }
-//
-//        } while(true);
+
 
     }
 

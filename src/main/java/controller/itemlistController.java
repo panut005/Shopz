@@ -1,14 +1,11 @@
 package controller;
 
 import ConnectDataBase.ProductDataBase;
-import com.github.sarxos.webcam.Webcam;
-import com.github.sarxos.webcam.WebcamPanel;
-import com.google.zxing.*;
-import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
-import com.google.zxing.common.HybridBinarizer;
+
 import javafx.collections.FXCollections;
+
+
 import javafx.collections.ObservableList;
-import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,14 +19,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Product;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -44,21 +36,16 @@ public class itemlistController {
     @FXML
     private TextField textID,textName,textAmount, textPrice;
     @FXML
-    private Button addBtn,deletBtn,buttonBack;
+    private Button addBtn,deletBtn,loadPictureBtn,buttonBack;
     @FXML
     private Label eID,eName,eAmount,ePrice;
-    @FXML private ImageView upload;
 
     @FXML
-    private AnchorPane webcamPane;
-    private Webcam webCam = null;
-
+    private ImageView  abc=null;
     private File file;
     private String srcImage="";
-    final SwingNode swingNode = new SwingNode();
+    private Button Menu;
 
-
-    LuminanceSource source =null;
     @FXML
     public void initialize(){
         ID.setCellValueFactory(new PropertyValueFactory<Product,String>("id"));
@@ -73,17 +60,7 @@ public class itemlistController {
         name.setCellFactory(TextFieldTableCell.forTableColumn());
         quantity.setCellFactory(TextFieldTableCell.forTableColumn());
         price.setCellFactory(TextFieldTableCell.forTableColumn());
-
-
     }
-
-
-
-
-
-
-
-
 
     public ObservableList<Product> addData(ArrayList<Product> data){
         ObservableList<Product> temp= FXCollections.observableArrayList();
@@ -92,10 +69,6 @@ public class itemlistController {
         }
         return temp;
     }
-    void showTable(){
-        tableView.setItems(addData(productDataBase.getAllProductS()));
-    }
-
     @FXML
     public void handleAddbtn(ActionEvent event) throws Exception {
         if((textID.getText().isEmpty()||textName.getText().isEmpty()||textAmount.getText().isEmpty()||textPrice.getText().isEmpty())||srcImage.isEmpty()){
@@ -144,23 +117,24 @@ public class itemlistController {
         else {
             String id=textID.getText();
             String name=textName.getText();
-            int quantity=Integer.parseInt(textAmount.getText());
+            int amonut=Integer.parseInt(textAmount.getText());
             double price=Double.parseDouble(textPrice.getText());
-            Product product=new Product(id,name,price,quantity);
-
+            Product product=new Product(id,name,price,amonut,srcImage);
             productDataBase.addProductToDB(product);
             textID.clear();
             textName.clear();
             textAmount.clear();
             textPrice.clear();
             srcImage="";
-            upload.setImage(null);
+            abc.setImage(null);
             showTable();
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Complete",ButtonType.OK);
             alert.showAndWait();
         }
     }
-
+    void showTable(){
+        tableView.setItems(addData(productDataBase.getAllProductS()));
+    }
 
     public void deletHandle(ActionEvent event)throws Exception{
         Product selectedItem = tableView.getSelectionModel().getSelectedItem();
@@ -239,7 +213,7 @@ public class itemlistController {
         fileChooser.setTitle("Choose your picture");
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Choose \".png\" and \".jpg\" file", "*.png", "*.jpg"));
-        file = fileChooser.showOpenDialog(upload.getScene().getWindow());
+        file = fileChooser.showOpenDialog(abc.getScene().getWindow());
         String[] tmp = file.getAbsolutePath().split("\\\\");
         String path ="";
         for (int i = 0; i < tmp.length-1; i++) {
@@ -248,10 +222,11 @@ public class itemlistController {
         }
         path+=tmp[tmp.length-1];
         System.out.println(path);
-        upload.setImage(new Image("file:///"+path));
+        abc.setImage(new Image("file:///"+path));
         System.out.println("file:///"+path);
         srcImage="file:///"+path;
     }
+
     public static boolean isAllNumber(TextField textField) {
         boolean isCorrect = true;
         for (int i = 0; i < textField.getText().length(); i++) {
@@ -281,10 +256,10 @@ public class itemlistController {
         return isCorrect;
     }
     @FXML
-    public void handlebuttonBack(ActionEvent event) throws IOException {
-        buttonBack= (Button) event.getSource();
-        Stage stage = (Stage)buttonBack.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/home.fxml"));
+    public void handleMenuBtn(ActionEvent event) throws IOException {
+        Menu= (Button) event.getSource();
+        Stage stage = (Stage)Menu.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ShowProduct.fxml"));
         stage.setScene(new Scene((Parent) loader.load()));
         stage.show();
     }
@@ -326,6 +301,15 @@ public class itemlistController {
             }
         }
         return string;
+
+    }
+    @FXML
+    public void handlebuttonBack(ActionEvent event) throws IOException {
+        buttonBack= (Button) event.getSource();
+        Stage stage = (Stage)buttonBack.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/home.fxml"));
+        stage.setScene(new Scene((Parent) loader.load()));
+        stage.show();
     }
 
 }

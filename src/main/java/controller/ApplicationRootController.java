@@ -64,7 +64,7 @@ public class ApplicationRootController implements Initializable{
     public AnchorPane webcamContainerAnchorPane;
     public ListView<String> barcodeListView;
     public TextField txtBarcodeNumber;
-    public ComboBox<BarcodeFormat> cmbBarcodeType;
+   // public ComboBox<BarcodeFormat> cmbBarcodeType;
     public Button btnGenerate;
     public Label lblStatus;
     private Stage parentStage;
@@ -116,7 +116,6 @@ public class ApplicationRootController implements Initializable{
             webcamContainerAnchorPane.getChildren().add(defaultWebcamPanelNode);
             setRenderBarcodeTypeList();
         });
-        btnGenerate.setOnAction(event -> generateBarcode());
 
     }
 
@@ -124,55 +123,10 @@ public class ApplicationRootController implements Initializable{
         for(BarcodeFormat barcodeFormat : BarcodeFormat.values()){
             options.add(barcodeFormat);
         }
-        cmbBarcodeType.setItems(options);
+       // cmbBarcodeType.setItems(options);
     }
 
-    private void generateBarcode() {
-        Task<BufferedImage> barcodeWriterTask = new Task<BufferedImage>() {
-            @Override
-            protected BufferedImage call() throws Exception {
-                String contents = txtBarcodeNumber.getText().trim();
-                BarcodeFormat format = cmbBarcodeType.getSelectionModel().getSelectedItem();
-                int width = 400;
-                int height = 300;
-                if(contents == null || (contents != null && contents.isEmpty()) || format == null){
-                    Platform.runLater(() -> {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setContentText("Please enter valid content and barcode format!");
-                        alert.setResult(ButtonType.CLOSE);
-                        alert.initStyle(StageStyle.UNDECORATED);
-                        alert.show();
-                    });
-                    return null;
-                }
-                try {
-                    if(format == BarcodeFormat.QR_CODE){
-                        height = 400;
-                    }
-                    BufferedImage image = MatrixToImageWriter.toBufferedImage(writer.encode(contents, format, width, height));
-                    return image;
-                } catch (Exception e) {
-                    Platform.runLater(() -> {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setContentText("Cannot generate barcode reason : " + e.getMessage());
-                        alert.setResult(ButtonType.CLOSE);
-                        alert.initStyle(StageStyle.UNDECORATED);
-                        alert.show();
-                    });
-                    return null;
-                }
-            }
-        };
 
-        barcodeWriterTask.setOnSucceeded(event -> {
-            BufferedImage result = barcodeWriterTask.getValue();
-            if(result != null){
-                openBarcodeModalWindow(result);
-            }
-        });
-
-        new Thread(barcodeWriterTask).start();
-    }
 
     private void openBarcodeModalWindow(BufferedImage result) {
         WritableImage image = SwingFXUtils.toFXImage(result, null);

@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 import model.Product;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 
@@ -36,7 +37,7 @@ public class itemlistController {
     @FXML
     private TextField textID,textName,textAmount, textPrice;
     @FXML
-    private Button addBtn,deletBtn,loadPictureBtn,buttonBack;
+    private Button addBtn,deletBtn,loadPictureBtn,buttonBack,viewBth;
     @FXML
     private Label eID,eName,eAmount,ePrice;
 
@@ -45,6 +46,7 @@ public class itemlistController {
     private File file;
     private String srcImage="";
     private Button Menu;
+    public static String PRODUCT_ID="";
 
     @FXML
     public void initialize(){
@@ -312,4 +314,26 @@ public class itemlistController {
         stage.show();
     }
 
+    @FXML
+    void onActionViewoBtn(ActionEvent event) {
+
+        Button b = (Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/itemdetail.fxml"));
+
+        try {
+            if(tableView.getSelectionModel().getSelectedItem()!=null) {
+
+                itemdetailController controller = loader.getController();
+                PRODUCT_ID = tableView.getSelectionModel().getSelectedItem().getId();
+                stage.setScene(new Scene((Parent) loader.load(), 1365, 1054));
+                stage.show();
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

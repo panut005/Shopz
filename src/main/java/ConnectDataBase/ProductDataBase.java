@@ -87,9 +87,10 @@ public class ProductDataBase {
         }
     }
     public Product getProduct(String productID){
-
-        Product product = null;
+        System.out.println("SSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
+            Product product = null;
         try{
+            System.out.println(productID);
             Class.forName(dbName);
             Connection connection = DriverManager.getConnection(dbURL);
             if(connection != null){
@@ -139,4 +140,32 @@ public class ProductDataBase {
         }
         return products;
     }
+
+    public static Product getProductAS(String productID){
+        System.out.println("SSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
+        Product productAS = null;
+        try{
+            System.out.println(productID);
+            Class.forName(dbName);
+            Connection connection = DriverManager.getConnection(dbURL);
+            if(connection != null){
+                String query = "select * from Product WHERE Product.ID='"+productID+"'";
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(query);
+                String id =resultSet.getString("ID");
+                String name=resultSet.getString("Name");
+                int a = resultSet.getInt("Quantity");
+                double p = resultSet.getDouble("Price");
+                String url = resultSet.getString("urlImage");
+                productAS=new Product(id,name,p,a,url);
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

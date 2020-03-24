@@ -8,22 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemlistController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemlistController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1420.0" />
-      <Text fill="WHITE" layoutX="583.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item List">
-         <font>
-            <Font size="73.0" />
-         </font>
-      </Text>
-      <Button fx:id="buttonBack" layoutX="1191.0" layoutY="893.0" mnemonicParsing="false" onAction="#handlebuttonBack" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: blue;" text="Back" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1427.0" />
+      <Button fx:id="buttonBack" layoutX="1193.0" layoutY="925.0" mnemonicParsing="false" onAction="#handlebuttonBack" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: blue;" text="Back" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <TableView fx:id="tableView" layoutX="166.0" layoutY="230.0" prefHeight="651.0" prefWidth="636.0">
+      <TableView fx:id="tableView" layoutX="29.0" layoutY="178.0" prefHeight="787.0" prefWidth="685.0">
          <columns>
             <TableColumn fx:id="ID" prefWidth="113.0" text="ID" />
             <TableColumn fx:id="name" minWidth="0.0" onEditCommit="#onEditName" prefWidth="289.0" text="Name" />
@@ -31,29 +25,55 @@
             <TableColumn fx:id="price" onEditCommit="#onEditPrice" prefWidth="113.0" text="Price" />
          </columns>
       </TableView>
-      <TextField fx:id="textID" layoutX="1099.0" layoutY="403.0" prefHeight="46.0" prefWidth="185.0" promptText="ID" />
-      <TextField fx:id="textName" layoutX="1099.0" layoutY="460.0" prefHeight="46.0" prefWidth="185.0" promptText="Name" />
-      <TextField fx:id="textAmount" layoutX="1099.0" layoutY="522.0" prefHeight="46.0" prefWidth="185.0" promptText="Quantity" />
-      <TextField fx:id="textPrice" layoutX="1099.0" layoutY="580.0" prefHeight="46.0" prefWidth="185.0" promptText="Price" />
-      <Button fx:id="addBtn" layoutX="1097.0" layoutY="697.0" mnemonicParsing="false" onAction="#handleAddbtn" text="Add" />
-      <Button fx:id="deletBtn" layoutX="1153.0" layoutY="697.0" mnemonicParsing="false" onAction="#deletHandle" text="Detete" />
-      <Button fx:id="loadPictureBtn" layoutX="1097.0" layoutY="638.0" mnemonicParsing="false" onAction="#loadPicture" text="Load Picture" />
-      <AnchorPane fx:id="webcamPane" layoutX="1023.0" layoutY="159.0" prefHeight="200.0" prefWidth="200.0" />
-      <Label layoutX="933.0" layoutY="406.0" text="Product ID:">
+      <TextField fx:id="textID" layoutX="1029.0" layoutY="398.0" prefHeight="68.0" prefWidth="315.0" promptText="ID">
          <font>
-            <Font size="28.0" />
-         </font></Label>
-      <Label layoutX="889.0" layoutY="463.0" text="Product Name:">
+            <Font size="36.0" />
+         </font></TextField>
+      <TextField fx:id="textName" layoutX="1029.0" layoutY="474.0" prefHeight="68.0" prefWidth="315.0" promptText="Name">
          <font>
-            <Font size="28.0" />
-         </font></Label>
-      <Label layoutX="967.0" layoutY="525.0" text="Quantity:">
+            <Font size="36.0" />
+         </font></TextField>
+      <TextField fx:id="textAmount" layoutX="1029.0" layoutY="549.0" prefHeight="46.0" prefWidth="185.0" promptText="Quantity">
          <font>
-            <Font size="28.0" />
-         </font></Label>
-      <Label layoutX="1002.0" layoutY="583.0" text="Price:">
+            <Font size="36.0" />
+         </font></TextField>
+      <TextField fx:id="textPrice" layoutX="1027.0" layoutY="624.0" prefHeight="46.0" prefWidth="185.0" promptText="Price">
          <font>
-            <Font size="28.0" />
+            <Font size="36.0" />
+         </font></TextField>
+      <Button fx:id="addBtn" layoutX="935.0" layoutY="781.0" mnemonicParsing="false" onAction="#handleAddbtn" style="-fx-background-color: green;" text="Add" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font></Button>
+      <Button fx:id="deletBtn" layoutX="1118.0" layoutY="782.0" mnemonicParsing="false" onAction="#deletHandle" style="-fx-background-color: red;" text="Detete" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font></Button>
+      <Button fx:id="loadPictureBtn" layoutX="935.0" layoutY="703.0" mnemonicParsing="false" onAction="#loadPicture" prefHeight="68.0" prefWidth="332.0" style="-fx-background-color: brown;" text="Load Picture" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font></Button>
+      <AnchorPane fx:id="webcamPane" layoutX="912.0" layoutY="169.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="815.0" layoutY="412.0" text="Product ID">
+         <font>
+            <Font size="36.0" />
          </font></Label>
+      <Label layoutX="786.0" layoutY="486.0" text="Product Name">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Label layoutX="837.0" layoutY="561.0" text="Quantity">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Label layoutX="803.0" layoutY="635.0" text="Price (THB)">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <TextField layoutX="568.0" layoutY="14.0" prefHeight="111.0" prefWidth="274.0" style="-fx-background-color: #B2BB1E;" text="Item List">
+         <font>
+            <Font size="58.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

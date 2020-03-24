@@ -55,5 +55,10 @@
          <font>
             <Font size="28.0" />
          </font></Label>
+      <Button fx:id="viewBth" layoutX="943.0" layoutY="893.0" mnemonicParsing="false" onAction="#onActionViewoBtn" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: green;" text="View" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

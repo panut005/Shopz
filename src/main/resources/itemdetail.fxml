@@ -15,26 +15,31 @@
             <Font size="58.0" />
          </font>
       </TextField>
-      <TextField layoutX="718.0" layoutY="437.0" prefHeight="84.0" prefWidth="547.0" text="Product Name">
+      <TextField fx:id="name" layoutX="718.0" layoutY="437.0" prefHeight="84.0" prefWidth="547.0" text="Product Name">
          <font>
             <Font size="35.0" />
          </font>
       </TextField>
-      <TextField layoutX="718.0" layoutY="313.0" prefHeight="84.0" prefWidth="547.0" text="Product No">
+      <TextField fx:id="id" layoutX="718.0" layoutY="313.0" prefHeight="84.0" prefWidth="547.0" text="Product No">
          <font>
             <Font size="35.0" />
          </font>
       </TextField>
-      <TextField layoutX="718.0" layoutY="558.0" prefHeight="84.0" prefWidth="547.0" text="Price">
+      <TextField fx:id="price" layoutX="718.0" layoutY="555.0" prefHeight="84.0" prefWidth="547.0" text="Price">
          <font>
             <Font size="35.0" />
          </font>
       </TextField>
-      <Button fx:id="buttonBack" layoutX="1080.0" layoutY="807.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: blue;" text="Back" textFill="WHITE">
+      <Button fx:id="buttonBack" layoutX="1080.0" layoutY="807.0" mnemonicParsing="false" onAction="#handlebuttonBack" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: blue;" text="Back" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
       <ImageView fitHeight="437.0" fitWidth="452.0" layoutX="122.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="quantity" layoutX="728.0" layoutY="673.0" prefHeight="84.0" prefWidth="547.0" text="Quantity">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

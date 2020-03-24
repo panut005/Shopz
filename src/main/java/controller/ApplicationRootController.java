@@ -47,11 +47,11 @@ import java.util.ResourceBundle;
 public class ApplicationRootController implements Initializable{
 
     @FXML
-    private Button buttonBack,Submit,Delete,add;
+    private Button buttonBack,Submit,Delete,add,submitBth;
     @FXML
     private TableView<Item> tableView;
     @FXML
-    private  TableColumn Item,Price,Quantity,Amount;
+    private  TableColumn Item,Price,Quantity,Amount,ID;
     @FXML
     private Text total;
     @FXML
@@ -197,15 +197,17 @@ public class ApplicationRootController implements Initializable{
     }
 
     public void createTable(){
+        ID.setCellValueFactory(new PropertyValueFactory<Product,String>("id"));
         Item.setCellValueFactory(new PropertyValueFactory<Product,String>("item"));
         Price.setCellValueFactory(new PropertyValueFactory<Product,Double>("price"));
         Quantity.setCellValueFactory(new PropertyValueFactory<Product, Integer>("quantity"));
         Amount.setCellValueFactory(new PropertyValueFactory<Product,Double>("amount"));
+        ID.setStyle("-fx-alignment: CENTER;");
         Item.setStyle("-fx-alignment: CENTER;");
         Price.setStyle("-fx-alignment: center-right;");
         Quantity.setStyle("-fx-alignment: center-right;");
         Amount.setStyle("-fx-alignment: center-right;");
-        arrayList.add(new Item("-",0,0,0));
+        arrayList.add(new Item("-","-",0,0,0));
         showTable(arrayList);
         tableView.setEditable(true);
     }
@@ -235,7 +237,7 @@ public class ApplicationRootController implements Initializable{
         }
         double p =product.getPrice();
         double a =p*q;
-        arrayList.add(new Item(product.getName(),p,q,a));
+        arrayList.add(new Item(s,product.getName(),p,q,a));
         showTable(arrayList);
 
     }public void addbarcode(String s){
@@ -248,7 +250,7 @@ public class ApplicationRootController implements Initializable{
         double p =product.getPrice();
         double a =p*q;
 
-        arrayList.add(new Item(product.getName(),p,q,a));
+        arrayList.add(new Item(s,product.getName(),p,q,a));
         showTable(arrayList);
 
     }
@@ -260,5 +262,16 @@ public class ApplicationRootController implements Initializable{
         tableView.getItems().remove(selectedItem);
         showTable(arrayList);
     }
+
+    @FXML
+    public void handlesubmit(ActionEvent event) throws IOException {
+        onClose();
+        submitBth= (Button) event.getSource();
+        Stage stage = (Stage)submitBth.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/bill.fxml"));
+        stage.setScene(new Scene((Parent) loader.load()));
+        stage.show();
+    }
+
 
 }

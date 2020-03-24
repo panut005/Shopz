@@ -5,11 +5,12 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemlistController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemlistController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1427.0" />
       <Button fx:id="buttonBack" layoutX="1193.0" layoutY="925.0" mnemonicParsing="false" onAction="#handlebuttonBack" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: blue;" text="Back" textFill="WHITE">
@@ -37,7 +38,7 @@
          <font>
             <Font size="36.0" />
          </font></TextField>
-      <TextField fx:id="textPrice" layoutX="1027.0" layoutY="624.0" prefHeight="46.0" prefWidth="185.0" promptText="Price">
+      <TextField fx:id="textPrice" layoutX="1029.0" layoutY="624.0" prefHeight="46.0" prefWidth="185.0" promptText="Price">
          <font>
             <Font size="36.0" />
          </font></TextField>
@@ -53,27 +54,27 @@
          <font>
             <Font size="36.0" />
          </font></Button>
-      <AnchorPane fx:id="webcamPane" layoutX="912.0" layoutY="169.0" prefHeight="200.0" prefWidth="200.0" />
-      <Label layoutX="815.0" layoutY="412.0" text="Product ID">
+      <Label layoutX="847.0" layoutY="410.0" text="Product ID:">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Label layoutX="786.0" layoutY="486.0" text="Product Name">
+      <Label layoutX="786.0" layoutY="486.0" text="Product Name:">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Label layoutX="837.0" layoutY="561.0" text="Quantity">
+      <Label layoutX="878.0" layoutY="561.0" text="Quantity:">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Label layoutX="803.0" layoutY="635.0" text="Price (THB)">
+      <Label layoutX="830.0" layoutY="624.0" text="Price (THB):">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <TextField layoutX="568.0" layoutY="14.0" prefHeight="111.0" prefWidth="274.0" style="-fx-background-color: #B2BB1E;" text="Item List">
+      <TextField layoutX="568.0" layoutY="14.0" prefHeight="125.0" prefWidth="288.0" style="-fx-background-color: #B2BB1E;" text="Item List">
          <font>
             <Font size="58.0" />
          </font>
       </TextField>
+      <ImageView fx:id="abc" fitHeight="150.0" fitWidth="200.0" layoutX="971.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

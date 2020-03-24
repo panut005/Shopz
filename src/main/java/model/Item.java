@@ -1,12 +1,14 @@
 package model;
 
 public class Item {
+    private String id  ;
     private String item;
     private double price;
     private int quantity;
     private double amount;
 
-    public Item(String item, double price, int quantity, double amount) {
+    public Item(String id, String item, double price, int quantity, double amount) {
+        this.id = id;
         this.item = item;
         this.price = price;
         this.quantity = quantity;
@@ -19,6 +21,14 @@ public class Item {
 
     public void setItem(String item) {
         this.item = item;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public double getPrice() {

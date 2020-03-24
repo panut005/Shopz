@@ -12,15 +12,16 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationRootController">
    <children>
-      <TableView fx:id="tableView" layoutX="845.0" layoutY="169.0" prefHeight="561.0" prefWidth="447.0">
+      <TableView fx:id="tableView" layoutX="816.0" layoutY="154.0" prefHeight="558.0" prefWidth="530.0">
          <columns>
-            <TableColumn fx:id="Item" prefWidth="199.0" text="Item" />
-            <TableColumn fx:id="Price" prefWidth="79.0" text="Price" />
-            <TableColumn fx:id="Quantity" prefWidth="79.0" text="Quantity" />
-            <TableColumn fx:id="Amount" prefWidth="89.0" text="Amount" />
+            <TableColumn fx:id="ID" prefWidth="73.0" text="ID" />
+            <TableColumn fx:id="Item" prefWidth="161.0" text="Item" />
+            <TableColumn fx:id="Price" text="Price" />
+            <TableColumn fx:id="Quantity" prefWidth="104.0" text="Quantity" />
+            <TableColumn fx:id="Amount" prefWidth="108.0" text="Amount" />
          </columns>
       </TableView>
-      <Button fx:id="Submit" layoutX="856.0" layoutY="796.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: green;" text="Submit" textFill="WHITE">
+      <Button fx:id="submitBth" layoutX="856.0" layoutY="796.0" mnemonicParsing="false" onAction="#handlesubmit" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: green;" text="Submit" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
@@ -40,7 +41,7 @@
             <Font size="67.0" />
          </font>
       </Text>
-      <TextField fx:id="search" layoutX="551.0" layoutY="802.0" promptText="ID  item" />
+      <TextField fx:id="search" layoutX="538.0" layoutY="744.0" prefHeight="45.0" prefWidth="162.0" promptText="BarcoeID" />
       <Button fx:id="add" layoutX="717.0" layoutY="802.0" mnemonicParsing="false" text="add" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1427.0" />
       <Text fx:id="total" layoutX="987.0" layoutY="766.0" strokeType="OUTSIDE" strokeWidth="0.0" text="total price : 0.00 baht" textAlignment="RIGHT" wrappingWidth="304.455078125">
@@ -53,21 +54,17 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <TextField fx:id="QuantityTF" alignment="CENTER_RIGHT" layoutX="551.0" layoutY="848.0" promptText="Quantity" text="1" />
-      <AnchorPane fx:id="mainContainer1" layoutX="43.0" layoutY="346.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
-         <children>
-            <AnchorPane fx:id="webcamContainerAnchorPane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="320.0" style="-fx-border-color: #000000;" />
-            <Label layoutX="14.0" layoutY="375.0" text="Status :">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblStatus" layoutX="60.0" layoutY="375.0" style="-fx-text-fill: green;" text="Scanning Barcode ...">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
+      <TextField fx:id="QuantityTF" alignment="CENTER_RIGHT" layoutX="538.0" layoutY="797.0" prefHeight="38.0" prefWidth="162.0" promptText="Quantity" text="1" />
+      <AnchorPane fx:id="webcamContainerAnchorPane" layoutX="65.0" layoutY="330.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="320.0" style="-fx-border-color: #000000;" />
+      <Label layoutX="291.0" layoutY="747.0" prefHeight="38.0" prefWidth="274.0" text="Product ID (Barcode):">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="419.0" layoutY="797.0" prefHeight="38.0" prefWidth="112.0" text="Quantity:">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

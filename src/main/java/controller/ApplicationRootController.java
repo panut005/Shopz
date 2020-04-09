@@ -41,13 +41,11 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-/**
- * Created by Tanuj on 2/12/17.
- */
+
 public class ApplicationRootController implements Initializable{
 
     @FXML
-    private Button buttonBack,Submit,Delete,add,submitBth;
+    private Button buttonBack,Submit,Delete,addBth,submitBth,findMember,register;
     @FXML
     private TableView<Item> tableView;
     @FXML
@@ -56,35 +54,29 @@ public class ApplicationRootController implements Initializable{
     private Text total;
     @FXML
     private TextField QuantityTF,search;
-
     private ProductDataBase productDataBase =new ProductDataBase();
     ArrayList<Item> arrayList=new ArrayList<>();
-    /** UI Controls **/
-    public AnchorPane mainContainer;
+    static ArrayList<Item> arrayListStatic=new ArrayList<>();
+
+
+    //webcam---------------------------------------------------------------------------------
+
     public AnchorPane webcamContainerAnchorPane;
     public ListView<String> barcodeListView;
-    public TextField txtBarcodeNumber;
-   // public ComboBox<BarcodeFormat> cmbBarcodeType;
-    public Button btnGenerate;
-    public Label lblStatus;
     private Stage parentStage;
-
     public Stage getParentStage() {
         return parentStage;
     }
-
     public void setParentStage(Stage parentStage) {
         this.parentStage = parentStage;
     }
-
     ObservableList<BarcodeFormat> options = FXCollections.observableArrayList();
     private Webcam defaultWebcam = null;
     private WebcamPanel defaultWebcamPanel = null;
     private final SwingNode defaultWebcamPanelNode = new SwingNode();
     Writer writer = new MultiFormatWriter();
-
     private Runnable barcodeScannerRunnable = null;
-
+// ----------------------------------------------------------------------------------------------------
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -222,6 +214,8 @@ public class ApplicationRootController implements Initializable{
     }
     @FXML
     public void handlebuttonAdd(ActionEvent event) throws IOException{
+
+        System.out.println("ssssssssssssssssssssssssssssssssssss");
         String s= search.getText();
         int q = Integer.parseInt(QuantityTF.getText());
         Product product =productDataBase.getProduct(s);
@@ -233,7 +227,9 @@ public class ApplicationRootController implements Initializable{
         arrayList.add(new Item(s,product.getName(),p,q,a));
         showTable(arrayList);
 
-    }public void addbarcode(String s){
+    }
+
+    public void addbarcode(String s){
 
         int q = 1;
         Product product =productDataBase.getProduct(s);
@@ -258,9 +254,12 @@ public class ApplicationRootController implements Initializable{
 
     @FXML
     public void handlesubmit(ActionEvent event) throws IOException {
-        onClose();
+
+        arrayListStatic=arrayList;
+
         submitBth= (Button) event.getSource();
         Stage stage = (Stage)submitBth.getScene().getWindow();
+        onClose();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/bill.fxml"));
         stage.setScene(new Scene((Parent) loader.load()));
         stage.show();
@@ -278,5 +277,22 @@ public class ApplicationRootController implements Initializable{
 
         stage.show();
     }
-    
+
+    @FXML
+    public void handlebuttonregister(ActionEvent event) throws IOException {
+        register= (Button) event.getSource();
+        Stage stage = (Stage)register.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Register.fxml"));
+
+        onClose();
+        stage.setScene(new Scene((Parent) loader.load()));
+
+        stage.show();
+    }
+
+    @FXML
+    public void handlebuttonfindMember(ActionEvent event) throws IOException {
+
+    }
+
 }

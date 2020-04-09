@@ -22,7 +22,7 @@
          </font>
       </Button>
       <ImageView fitHeight="437.0" fitWidth="452.0" layoutX="122.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="id" layoutX="689.0" layoutY="320.0" text="Product No:">
+      <Label fx:id="id" layoutX="683.0" layoutY="316.0" text="Product No:">
          <font>
             <Font size="35.0" />
          </font></Label>
@@ -31,12 +31,12 @@
             <Font size="35.0" />
          </font>
       </Label>
-      <Label fx:id="price" layoutX="688.0" layoutY="461.0" text="Price:">
+      <Label fx:id="price" layoutX="689.0" layoutY="457.0" text="Price:">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
-      <Label fx:id="quantity" layoutX="688.0" layoutY="526.0" text="Quantity:">
+      <Label fx:id="quantity" layoutX="688.0" layoutY="520.0" text="Quantity:">
          <font>
             <Font size="35.0" />
          </font>

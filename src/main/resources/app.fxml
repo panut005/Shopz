@@ -31,18 +31,17 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <Button layoutX="598.0" layoutY="191.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: grey;" text="Find Member" textFill="WHITE">
+      <Button fx:id="findMember" layoutX="569.0" layoutY="193.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: grey;" text="Find Member" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Text layoutX="57.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello .......">
+      <Text fx:id="nameCus" layoutX="57.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello Customer">
          <font>
-            <Font size="67.0" />
+            <Font size="60.0" />
          </font>
       </Text>
-      <TextField fx:id="search" layoutX="538.0" layoutY="744.0" prefHeight="45.0" prefWidth="162.0" promptText="BarcoeID" />
-      <Button fx:id="add" layoutX="717.0" layoutY="802.0" mnemonicParsing="false" text="add" />
+      <TextField fx:id="search" layoutX="312.0" layoutY="710.0" prefHeight="45.0" prefWidth="162.0" promptText="BarcoeID" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1427.0" />
       <Text fx:id="total" layoutX="987.0" layoutY="766.0" strokeType="OUTSIDE" strokeWidth="0.0" text="total price : 0.00 baht" textAlignment="RIGHT" wrappingWidth="304.455078125">
          <font>
@@ -54,17 +53,27 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <TextField fx:id="QuantityTF" alignment="CENTER_RIGHT" layoutX="538.0" layoutY="797.0" prefHeight="38.0" prefWidth="162.0" promptText="Quantity" text="1" />
+      <TextField fx:id="QuantityTF" alignment="CENTER_RIGHT" layoutX="312.0" layoutY="763.0" prefHeight="38.0" prefWidth="162.0" promptText="Quantity" text="1" />
       <AnchorPane fx:id="webcamContainerAnchorPane" layoutX="65.0" layoutY="330.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="320.0" style="-fx-border-color: #000000;" />
-      <Label layoutX="291.0" layoutY="747.0" prefHeight="38.0" prefWidth="274.0" text="Product ID (Barcode):">
+      <Label layoutX="65.0" layoutY="713.0" prefHeight="38.0" prefWidth="274.0" text="Product ID (Barcode):">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <Label layoutX="419.0" layoutY="797.0" prefHeight="38.0" prefWidth="112.0" text="Quantity:">
+      <Label layoutX="193.0" layoutY="763.0" prefHeight="38.0" prefWidth="112.0" text="Quantity:">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
+      <Button fx:id="register" layoutX="569.0" layoutY="250.0" mnemonicParsing="false" onAction="#handlebuttonregister" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: grey;" text="Register" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="addBth" layoutX="492.0" layoutY="726.0" mnemonicParsing="false" onAction="#handlebuttonAdd" prefHeight="45.0" prefWidth="72.0" style="-fx-background-color: green;" text="add" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

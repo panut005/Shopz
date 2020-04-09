@@ -17,25 +17,10 @@
             <Font size="58.0" />
          </font>
       </TextField>
-      <TextField layoutX="922.0" layoutY="347.0" prefHeight="77.0" prefWidth="340.0" promptText="Total">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="922.0" layoutY="435.0" prefHeight="77.0" prefWidth="340.0" promptText="Receive">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="922.0" layoutY="535.0" prefHeight="77.0" prefWidth="340.0" promptText="Change">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </TextField>
-      <TableView layoutX="40.0" layoutY="170.0" prefHeight="787.0" prefWidth="685.0">
+      <TableView fx:id="tableView" layoutX="40.0" layoutY="170.0" prefHeight="787.0" prefWidth="685.0">
         <columns>
-          <TableColumn prefWidth="539.0000305175781" text="Item" />
-          <TableColumn prefWidth="141.0" text="Price" />
+          <TableColumn fx:id="Item" prefWidth="539.0000305175781" text="Item" />
+          <TableColumn fx:id="Amount" prefWidth="141.0" text="Amout" />
         </columns>
       </TableView>
       <Button fx:id="Cancle" layoutX="785.0" layoutY="823.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: green;" text="Submit" textFill="WHITE">
@@ -48,32 +33,27 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <TextField layoutX="922.0" layoutY="259.0" prefHeight="77.0" prefWidth="340.0" promptText="Subtotal">
-         <font>
-            <Font size="35.0" />
-         </font>
-      </TextField>
       <Button layoutX="785.0" layoutY="669.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="477.0" style="-fx-background-color: brown;" text="Gift Card" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <Label layoutX="785.0" layoutY="275.0" text="Subtotal">
+      <Label layoutX="785.0" layoutY="275.0" prefHeight="54.0" prefWidth="408.0" text="Subtotal:  ">
          <font>
             <Font size="37.0" />
          </font>
       </Label>
-      <Label layoutX="811.0" layoutY="363.0" text="Total">
+      <Label fx:id="total" layoutX="796.0" layoutY="365.0" prefHeight="54.0" prefWidth="388.0" text="Total: ">
          <font>
             <Font size="37.0" />
          </font>
       </Label>
-      <Label layoutX="789.0" layoutY="451.0" text="Receive">
+      <Label layoutX="789.0" layoutY="451.0" prefHeight="54.0" prefWidth="423.0" text="Receive:">
          <font>
             <Font size="37.0" />
          </font>
       </Label>
-      <Label layoutX="789.0" layoutY="551.0" text="Change">
+      <Label layoutX="789.0" layoutY="551.0" prefHeight="54.0" prefWidth="408.0" text="Change:">
          <font>
             <Font size="37.0" />
          </font>

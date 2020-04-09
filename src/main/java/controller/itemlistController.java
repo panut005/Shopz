@@ -317,8 +317,8 @@ public class itemlistController {
     @FXML
     void onActionViewoBtn(ActionEvent event) {
 
-        Button b = (Button) event.getSource();
-        Stage stage = (Stage) b.getScene().getWindow();
+        viewBth = (Button) event.getSource();
+        Stage stage = (Stage) viewBth.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/itemdetail.fxml"));
 
         try {

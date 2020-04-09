@@ -93,6 +93,7 @@ public class ApplicationRootController implements Initializable{
         defaultWebcamPanel = new WebcamPanel(defaultWebcam, true);
         creatDefaultWebcamPanel(defaultWebcamPanelNode);
         init();
+        defaultWebcam.close();
         createTable();
     }
 
@@ -181,15 +182,7 @@ public class ApplicationRootController implements Initializable{
             }
         };
     }
-    @FXML
-    public void handlebuttonBack(ActionEvent event) throws IOException {
-        onClose();
-        buttonBack= (Button) event.getSource();
-        Stage stage = (Stage)buttonBack.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/home.fxml"));
-        stage.setScene(new Scene((Parent) loader.load()));
-        stage.show();
-    }
+
 
     public void onClose() {
         defaultWebcam.close();
@@ -274,4 +267,16 @@ public class ApplicationRootController implements Initializable{
     }
 
 
+    @FXML
+    public void handlebuttonBack(ActionEvent event) throws IOException {
+        buttonBack= (Button) event.getSource();
+        Stage stage = (Stage)buttonBack.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/home.fxml"));
+
+        onClose();
+        stage.setScene(new Scene((Parent) loader.load()));
+
+        stage.show();
+    }
+    
 }

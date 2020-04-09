@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Product;
@@ -22,9 +23,8 @@ public class itemdetailController {
     @FXML
     private Button buttonBack;
     @FXML
-    private TextField id,name,price,quantity;
+    private Label id,name,price,quantity;
     private String stringID;
-    private static Product productAS=null;
     private Product product=null;
     private ProductDataBase productDataBase =new ProductDataBase();
     @FXML
@@ -47,13 +47,12 @@ public class itemdetailController {
             if (i.getId().equals(stringID));
             product=i;
         }
-
         System.out.println("test:"+product);
-//        productAS=productDataBase.getProductAS(PRODUCT_ID+"");
-//        id.setText("Product No: "+productAS.getId());
-//     name.setText("Product Name: "+productAS.getName());
-//      price.setText("Price"+ String.format("%.2f", productAS.getPrice()));
-//        quantity.setText("Quantity: "+productAS.getQuantity());
+        product=productDataBase.getProduct(PRODUCT_ID+"");
+        id.setText("Product No:   "+product.getId());
+        name.setText("Product Name: "+product.getName());
+        price.setText("Price:   "+ String.format("%.2f", product.getPrice())+"Baht.");
+        quantity.setText("Quantity: "+product.getQuantity());
 
     }
 

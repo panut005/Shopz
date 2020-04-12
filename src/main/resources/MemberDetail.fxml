@@ -69,11 +69,31 @@
                </font>
             </TextField>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-3.0" layoutY="-3.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1500.0" />
-            <TextField layoutX="511.0" layoutY="13.0" prefHeight="111.0" prefWidth="487.0" style="-fx-background-color: #B2BB1E;" text="Member Register">
+            <TextField layoutX="562.0" layoutY="12.0" prefHeight="111.0" prefWidth="424.0" style="-fx-background-color: #B2BB1E;" text="Member Detail">
                <font>
                   <Font size="58.0" />
                </font>
             </TextField>
+            <Text layoutX="200.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subdistric" wrappingWidth="130.4160100221634">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+            <Text layoutX="194.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distric" wrappingWidth="130.4160100221634">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+            <Text layoutX="194.0" layoutY="558.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Province" wrappingWidth="130.4160100221634">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+            <Text layoutX="207.0" layoutY="613.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZIP Code" wrappingWidth="130.4160100221634">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
    </children>

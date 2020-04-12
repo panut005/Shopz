@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1426.0" />
+      <Button fx:id="buttonList" layoutX="95.0" layoutY="306.0" mnemonicParsing="false" onAction="#handlebuttonList" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: blue;" text="List" textFill="WHITE">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonRegister" layoutX="795.0" layoutY="296.0" mnemonicParsing="false" onAction="#handlebuttonRegister" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: red;" text="Register" textFill="WHITE">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Button>
+      <TextField layoutX="586.0" layoutY="11.0" prefHeight="111.0" prefWidth="276.0" style="-fx-background-color: #B2BB1E;" text="Member">
+         <font>
+            <Font size="58.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

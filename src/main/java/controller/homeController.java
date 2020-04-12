@@ -38,7 +38,7 @@ public class homeController {
     public void handlebuttonManager(ActionEvent event) throws IOException {
         buttonManager= (Button) event.getSource();
         Stage stage = (Stage) buttonManager.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/itemlist.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/managerhome.fxml"));
         stage.setScene(new Scene((Parent) loader.load()));
         stage.show();
 

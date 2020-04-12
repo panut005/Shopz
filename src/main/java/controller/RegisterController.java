@@ -50,12 +50,12 @@ public class RegisterController {
 
     @FXML
     void initialize(){
-        userFill.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                userFill.setStyle("");
-            }
-        });
+//        userFill.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//                userFill.setStyle("");
+//            }
+//        });
         tel_numberFill.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {

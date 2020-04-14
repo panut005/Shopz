@@ -27,13 +27,6 @@ public class RegisterController {
     Button registerBtn;
 
     @FXML
-    TextField userFill;
-    @FXML
-    PasswordField passwordFill;
-    @FXML
-    PasswordField repasswordFill;
-
-    @FXML
     TextField firstnameFill;
 
     @FXML
@@ -122,8 +115,6 @@ public class RegisterController {
 
     @FXML
     protected void handleRegisterButtonAction(ActionEvent e) throws SQLException {
-        String userID = userFill.getText().toLowerCase();
-        String passID = passwordFill.getText();
         String firstname = firstnameFill.getText();
         String lastname = lastnameFill.getText();
         String address = addressFill.getText();
@@ -166,24 +157,24 @@ public class RegisterController {
                                     break;
                                 }
                             }
-                            if ((str.charAt(j) < 48) || ((str.charAt(j) > 57) && (str.charAt(j) < 65)) || ((str.charAt(j) > 90) && (str.charAt(j) < 97)) || (str.charAt(j) > 122)) {
-                                haveSign = true;
-                                Alert alert = new Alert(Alert.AlertType.WARNING,
-                                        "Input have special sign, please check again", ButtonType.OK);
-                                alert.showAndWait();
-                                if(i==0){
-                                    userFill.setStyle("-fx-border-color: red");;
-                                }else if(i==1){
-                                    passwordFill.clear();
-                                    repasswordFill.clear();
-                                }else if(i==2){
-                                    firstnameFill.setStyle("-fx-border-color: red");
-                                }else if(i==3){
-                                    lastnameFill.setStyle("-fx-border-color: red");;
-                                }
-
-                                break;
-                            }
+//                            if ((str.charAt(j) < 48) || ((str.charAt(j) > 57) && (str.charAt(j) < 65)) || ((str.charAt(j) > 90) && (str.charAt(j) < 97)) || (str.charAt(j) > 122)) {
+//                                haveSign = true;
+//                                Alert alert = new Alert(Alert.AlertType.WARNING,
+//                                        "Input have special sign, please check again", ButtonType.OK);
+//                                alert.showAndWait();
+//                                if(i==0){
+//                                    userFill.setStyle("-fx-border-color: red");;
+//                                }else if(i==1){
+//                                    passwordFill.clear();
+//                                    repasswordFill.clear();
+//                                }else if(i==2){
+//                                    firstnameFill.setStyle("-fx-border-color: red");
+//                                }else if(i==3){
+//                                    lastnameFill.setStyle("-fx-border-color: red");;
+//                                }
+//
+//                                break;
+//                            }
                         }
                         if(i==5){ //tel num
                             if((str.charAt(j) < 48) ||(str.charAt(j) > 57)){
@@ -225,25 +216,25 @@ public class RegisterController {
                     break;
                 }
             }
-            if(!haveSign && !addrHaveSign){
-                if((CustomerDB.checkUsername(userID))){
-
-                    Alert alert = new Alert(Alert.AlertType.WARNING,
-                            "Username has been used", ButtonType.OK);
-                    alert.showAndWait();
-                    userFill.setStyle("-fx-border-color: red");;
-
-                }else if(CustomerDB.checkTelephoneNo(tel_number)){
-                    Alert alert = new Alert(Alert.AlertType.WARNING,
-                            "Telephone number  has been used", ButtonType.OK);
-                    alert.showAndWait();
-                    tel_numberFill.setStyle("-fx-border-color: red");
-                }
-                else if((passID.equals(passID) ) ){
-                    CustomerDB.register(userID, passID, firstname, lastname, address, tel_number);
-                    navigateTo("/app.fxml", e, 1365, 1054);
-                }
-            }
+//            if(!haveSign && !addrHaveSign){
+//                if((CustomerDB.checkUsername(userID))){
+//
+//                    Alert alert = new Alert(Alert.AlertType.WARNING,
+//                            "Username has been used", ButtonType.OK);
+//                    alert.showAndWait();
+//                    userFill.setStyle("-fx-border-color: red");;
+//
+//                }else if(CustomerDB.checkTelephoneNo(tel_number)){
+//                    Alert alert = new Alert(Alert.AlertType.WARNING,
+//                            "Telephone number  has been used", ButtonType.OK);
+//                    alert.showAndWait();
+//                    tel_numberFill.setStyle("-fx-border-color: red");
+//                }
+//                else if((passID.equals(passID) ) ){
+//                    CustomerDB.register(userID, passID, firstname, lastname, address, tel_number);
+//                    navigateTo("/app.fxml", e, 1365, 1054);
+//                }
+//            }
 
         }else{
             Alert alert = new Alert(Alert.AlertType.WARNING,

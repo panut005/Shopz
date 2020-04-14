@@ -72,7 +72,7 @@
          </font>
       </TextField>
       <ImageView fx:id="abc" fitHeight="150.0" fitWidth="200.0" layoutX="971.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="viewBth" layoutX="935.0" layoutY="859.0" mnemonicParsing="false" onAction="#onActionViewoBtn" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: blue;" text="View" textFill="WHITE">
+      <Button fx:id="viewBth" layoutX="935.0" layoutY="859.0" mnemonicParsing="false" onAction="#onActionViewoBtn" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: purple;" text="View" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>

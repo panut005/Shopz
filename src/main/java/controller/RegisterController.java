@@ -49,6 +49,15 @@ public class RegisterController {
     Label label;
 
     @FXML
+    TextField districtField;
+
+    @FXML
+    TextField provinceField;
+
+    @FXML
+    TextField zipcodeField;
+
+    @FXML
     void initialize(){
 //        userFill.setOnMouseClicked(new EventHandler<MouseEvent>() {
 //            @Override
@@ -66,6 +75,24 @@ public class RegisterController {
             @Override
             public void handle(MouseEvent event) {
                 addressFill.setStyle("");
+            }
+        });
+        districtField.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                districtField.setStyle("");
+            }
+        });
+        provinceField.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                provinceField.setStyle("");
+            }
+        });
+        zipcodeField.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                zipcodeField.setStyle("");
             }
         });
         firstnameFill.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -100,16 +127,21 @@ public class RegisterController {
         String firstname = firstnameFill.getText();
         String lastname = lastnameFill.getText();
         String address = addressFill.getText();
+        String district = districtField.getText();
+        String province = provinceField.getText();
+        String zipcode = zipcodeField.getText();
         String tel_number = tel_numberFill.getText();
 
-        if(!StringUtils.isBlank(userID)&&!StringUtils.isBlank(passID)&&!StringUtils.isBlank(firstname)
-        &&!StringUtils.isBlank(lastname)&&!StringUtils.isBlank(address)&&!StringUtils.isBlank(tel_number)){
+        if(!StringUtils.isBlank(firstname)
+        &&!StringUtils.isBlank(lastname)&&!StringUtils.isBlank(address)&&!StringUtils.isBlank(district)&&
+        !StringUtils.isBlank(province)&&!StringUtils.isBlank(zipcode)&&!StringUtils.isBlank(tel_number)){
             ArrayList<String> arrs = new ArrayList<>();
-            arrs.add(userID);
-            arrs.add(passID);
             arrs.add(firstname);
             arrs.add(lastname);
             arrs.add(address);
+            arrs.add(district);
+            arrs.add(province);
+            arrs.add(zipcode);
             arrs.add(tel_number);
             boolean haveSign =false;
             boolean addrHaveSign = false;

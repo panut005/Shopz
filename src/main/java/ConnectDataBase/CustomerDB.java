@@ -23,14 +23,15 @@ public class CustomerDB {
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()){
-                    String firstname=resultSet.getString("first_name");
-                    String lastname=resultSet.getString("last_name");
-                    String address=resultSet.getString("address");
-                    String subdistrict=resultSet.getString("subdistrict");
-                    String province=resultSet.getString("province");
-                    String zipcode=resultSet.getString("zipcode");
-                    String tel = resultSet.getString("tel_number");
-                    customers.add(new Customer(firstname,lastname,address,subdistrict,province,zipcode,tel));
+                    String firstname  = resultSet.getString("first_name");
+                    String lastname   = resultSet.getString("last_name");
+                    String address    = resultSet.getString("address");
+                    String district   = resultSet.getString("district");
+                    String province   = resultSet.getString("province");
+                    String zipcode    = resultSet.getString("zipcode");
+                    String tel        = resultSet.getString("tel_number");
+                    System.out.println(firstname + " " + lastname);
+                    customers.add(new Customer(address,district,province,zipcode,firstname,lastname,tel));
                 }
                 connection.close();
             }

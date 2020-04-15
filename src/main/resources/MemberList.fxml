@@ -12,10 +12,10 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1427.0" />
       <TableView fx:id="tableView" layoutX="29.0" layoutY="178.0" prefHeight="787.0" prefWidth="1325.0">
          <columns>
-            <TableColumn fx:id="ID" prefWidth="229.25308799743652" text="ID" />
+<!--            <TableColumn fx:id="ID" prefWidth="229.25308799743652" text="ID" />-->
             <TableColumn fx:id="name" minWidth="0.0" prefWidth="721.0759887695312" text="Name" />
-            <TableColumn fx:id="price" prefWidth="298.92401123046875" text="Tel." />
-            <TableColumn prefWidth="76.1900634765625" text="View" />
+            <TableColumn fx:id="tel" prefWidth="298.92401123046875" text="Tel." />
+            <TableColumn fx:id="show" prefWidth="76.1900634765625" text="View" />
          </columns>
       </TableView>
       <TextField layoutX="549.0" layoutY="14.0" prefHeight="111.0" prefWidth="371.0" style="-fx-background-color: #B2BB1E;" text="Member List">

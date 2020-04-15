@@ -2,6 +2,7 @@ package controller;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.Customer;
 
@@ -28,6 +29,8 @@ public class MemberDetailController {
 
     @FXML
     private TextField zipcodeField;
+    @FXML
+    private Button editBtn;
 
 
     public void initialize(){
@@ -35,6 +38,7 @@ public class MemberDetailController {
             @Override
             public void run() {
                 firstnameFill.setText(data.getFirstname().toString());
+                editBtn.getStyleClass().add("btn-success");
                 lastnameFill.setText(data.getLastname().toString());
                 addressFill.setText(data.getAddress().toString());
                 tel_numberFill.setText(data.getTel_number().toString());

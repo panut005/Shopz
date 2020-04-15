@@ -50,19 +50,19 @@
          <font>
             <Font size="36.0" />
          </font></Button>
-      <Label layoutX="847.0" layoutY="410.0" text="Product ID:">
+      <Label layoutX="847.0" layoutY="410.0" text="Product ID">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Label layoutX="786.0" layoutY="486.0" text="Product Name:">
+      <Label layoutX="786.0" layoutY="486.0" text="Product Name">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Label layoutX="878.0" layoutY="561.0" text="Quantity:">
+      <Label layoutX="878.0" layoutY="561.0" text="Quantity">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Label layoutX="830.0" layoutY="624.0" text="Price (THB):">
+      <Label layoutX="830.0" layoutY="635.0" text="Price (THB)">
          <font>
             <Font size="36.0" />
          </font></Label>

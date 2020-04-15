@@ -60,11 +60,14 @@ public class Customer {
                 this.show= (Button) event.getSource();
                 Stage stage = (Stage) this.show.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/MemberDetail.fxml"));
+
                 Parent root = loader.load();
                 MemberDetailController controller = loader.getController();
                 controller.setData(new Customer(address, district, province, zipcode, firstname, lastname, tel_number));
                 Scene scene = new Scene(root);
+                scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
                 stage.setScene(scene);
+                stage.sizeToScene();
                 stage.show();
             }catch (Exception e){
                 e.printStackTrace();

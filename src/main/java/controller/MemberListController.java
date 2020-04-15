@@ -3,14 +3,12 @@ package controller;
 import javafx.collections.FXCollections;
 
 import ConnectDataBase.CustomerDB;
-import ConnectDataBase.ProductDataBase;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import model.Customer;
-import model.Product;
 import javafx.collections.ObservableList;
 import java.util.ArrayList;
 

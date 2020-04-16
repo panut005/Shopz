@@ -18,7 +18,7 @@ public class MemberListController {
     @FXML
     private TableView<Customer> tableView;
     @FXML
-    private TableColumn<Customer,String> ID,name,tel;
+    private TableColumn<Customer,String> ID,name,tel,lastname;
     @FXML
     private TableColumn<Customer, Button> show;
     private CustomerDB customerDB =new CustomerDB();
@@ -28,6 +28,7 @@ public class MemberListController {
 //        ID.setCellValueFactory(new PropertyValueFactory<Customer,String>("id"));
 //        ID.setStyle("-fx-alignment: CENTER;");
         name.setCellValueFactory(new PropertyValueFactory<Customer,String>("firstname"));
+        lastname.setCellValueFactory(new PropertyValueFactory<Customer,String>("lastname"));
         tel.setCellValueFactory(new PropertyValueFactory<Customer,String>("tel_number"));
         show.setCellValueFactory(new PropertyValueFactory<Customer,Button>("show"));
         showTable();

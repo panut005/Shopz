@@ -19,7 +19,7 @@
             <Font size="63.0" />
          </font>
       </Button>
-      <TextField layoutX="596.0" layoutY="14.0" prefHeight="111.0" prefWidth="288.0" style="-fx-background-color: #B2BB1E;" text="Manager">
+      <TextField layoutX="569.0" layoutY="14.0" prefHeight="125.0" prefWidth="309.0" style="-fx-background-color: #B2BB1E;" text="Manager">
          <font>
             <Font size="58.0" />
          </font>

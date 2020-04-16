@@ -26,6 +26,8 @@ public class FinanceController {
     @FXML
     ChoiceBox<String> boxM = new ChoiceBox<String>();
     @FXML
+    ChoiceBox<String> boxY = new ChoiceBox<String>();
+    @FXML
     private TableView<Item> tableView;
     @FXML
     private TableColumn Item,Quantity,Amount,ID;
@@ -41,7 +43,9 @@ public class FinanceController {
         boxM.getSelectionModel().selectedItemProperty()
                 .addListener( (ObservableValue<? extends String> observable, String oldValue, String newValue)
                         -> changebox(newValue));
-
+        boxM.getSelectionModel().select(0);
+        boxY.getItems().add("2020");
+        boxY.getSelectionModel().select(0);
     }
 
 

@@ -1,10 +1,17 @@
 package controller;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.Customer;
+
+import java.io.IOException;
 
 public class MemberDetailController {
 
@@ -30,7 +37,7 @@ public class MemberDetailController {
     @FXML
     private TextField zipcodeField;
     @FXML
-    private Button editBtn;
+    private Button editBtn,backBtn;
 
 
     public void initialize(){
@@ -48,6 +55,14 @@ public class MemberDetailController {
 
             }
         });
+    }
+    @FXML
+    public void handlebuttonBack(ActionEvent event) throws IOException {
+        backBtn= (Button) event.getSource();
+        Stage stage = (Stage)backBtn.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MemberList.fxml"));
+        stage.setScene(new Scene((Parent) loader.load()));
+        stage.show();
     }
 
     public void setData(Customer data){

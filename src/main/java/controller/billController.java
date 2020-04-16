@@ -83,6 +83,7 @@ public class billController {
         }
         Alert alert = new Alert(Alert.AlertType.INFORMATION, "Complete",ButtonType.OK);
         alert.showAndWait();
+        arrayListStatic=null;
         pay= (Button) event.getSource();
         Stage stage = (Stage)pay.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/app.fxml"));

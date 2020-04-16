@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
    <children>
       <Pane layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1490.0" style="-fx-background-color: white;">
          <children>
@@ -69,7 +69,7 @@
                </font>
             </TextField>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-3.0" layoutY="-3.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1500.0" />
-            <TextField layoutX="511.0" layoutY="13.0" prefHeight="111.0" prefWidth="487.0" style="-fx-background-color: #B2BB1E;" text="Member Register">
+            <TextField layoutX="471.0" layoutY="14.0" prefHeight="125.0" prefWidth="522.0" style="-fx-background-color: #B2BB1E;" text="Member Register">
                <font>
                   <Font size="58.0" />
                </font>

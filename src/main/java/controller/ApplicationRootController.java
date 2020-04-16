@@ -227,6 +227,7 @@ public class ApplicationRootController implements Initializable{
         double a =p*q;
         arrayList.add(new Item(s,product.getName(),p,q,a,getMonth(),getYear()));
         showTable(arrayList);
+        search.clear();
 
     }
 

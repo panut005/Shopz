@@ -32,12 +32,18 @@
             </font>
         </TextField>
       <ChoiceBox fx:id="boxM" accessibleRole="BUTTON" layoutX="877.0" layoutY="178.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="90.0" />
-      <Label fx:id="total" layoutX="712.0" layoutY="791.0" prefHeight="54.0" prefWidth="583.0" text="Total: ">
+      <Label fx:id="total" layoutX="712.0" layoutY="634.0" prefHeight="54.0" prefWidth="583.0" text="Total: ">
          <font>
             <Font size="37.0" />
          </font>
       </Label>
-      <Label layoutX="712.0" layoutY="171.0" prefHeight="54.0" prefWidth="153.0" text="Month: ">
+      <Label layoutX="735.0" layoutY="171.0" prefHeight="54.0" prefWidth="132.0" text="Month: ">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="boxY" accessibleRole="BUTTON" layoutX="1112.0" layoutY="178.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="90.0" />
+      <Label layoutX="1028.0" layoutY="171.0" prefHeight="54.0" prefWidth="90.0" text="Year: ">
          <font>
             <Font size="37.0" />
          </font>

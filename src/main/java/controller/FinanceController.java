@@ -18,7 +18,7 @@ import model.Product;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static controller.ApplicationRootController.arrayListStatic;
+
 
 public class FinanceController {
     @FXML

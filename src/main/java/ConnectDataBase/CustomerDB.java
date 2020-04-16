@@ -154,4 +154,24 @@ public class CustomerDB {
             e.printStackTrace();
         }
     }
+
+
+    public static void update(Customer customer){
+        try {
+            Class.forName(dbName);
+            Connection connection = DriverManager .getConnection(dbURL);
+            if(connection != null){
+                String query  = " UPDATE Customer SET first_name= '"+customer.getFirstname()+"',last_name = '"+customer.getLastname()
+                        +"',address = '"+customer.getAddress()+"',district = '"+customer.getDistrict()+"',province='"+customer.getProvince()
+                        +"',zipcode = '"+customer.getZipcode()+"' WHERE tel_number = "+customer.getTel_number()+";";
+                PreparedStatement p = connection.prepareStatement(query);
+                p.executeUpdate();
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

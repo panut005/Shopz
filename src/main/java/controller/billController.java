@@ -30,7 +30,7 @@ public class billController {
     Button buttonBack,pay;
 
     @FXML
-    Label total;
+    Label total,grandtotal,vat;
     @FXML
     public void initialize(){
         createTable();
@@ -62,7 +62,10 @@ public class billController {
         for (Item i:arrayList){
             t=t+i.getAmount();
         }
-        total.setText("total price : "+String.format("%,.2f",t)+" baht");
+        total.setText("Total: "+String.format("%,.2f",(t*93/100))+" baht");
+        vat.setText("Vat (7%): "+String.format("%,.2f",t*7/100)+" baht");
+        grandtotal.setText("Grand Total: "+String.format("%,.2f",t)+" baht");
+
     }
 
     public ObservableList<Item> addData(ArrayList<Item> data){

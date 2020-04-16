@@ -68,7 +68,8 @@ public class ProductDataBase {
             e.printStackTrace();
         }
     }
-    public static void update(Product product){
+    public  void update(Product product){
+        System.out.println("ssss");
         try {
             Class.forName(dbName);
             Connection connection = DriverManager .getConnection(dbURL);
@@ -78,7 +79,6 @@ public class ProductDataBase {
                 PreparedStatement p = connection.prepareStatement(query);
                 p.executeUpdate();
                 connection.close();
-                System.out.println("update complete");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -139,31 +139,4 @@ public class ProductDataBase {
         }
         return products;
     }
-
-    public static Product getProductAS(String productID){
-        Product productAS = null;
-        try{
-            System.out.println(productID);
-            Class.forName(dbName);
-            Connection connection = DriverManager.getConnection(dbURL);
-            if(connection != null){
-                String query = "select * from Product WHERE Product.ID='"+productID+"'";
-                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery(query);
-                String id =resultSet.getString("ID");
-                String name=resultSet.getString("Name");
-                int a = resultSet.getInt("Quantity");
-                double p = resultSet.getDouble("Price");
-                String url = resultSet.getString("urlImage");
-                productAS=new Product(id,name,p,a,url);
-                connection.close();
-            }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
 }

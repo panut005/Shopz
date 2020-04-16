@@ -52,12 +52,6 @@ public class RegisterController {
 
     @FXML
     void initialize(){
-//        userFill.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent event) {
-//                userFill.setStyle("");
-//            }
-//        });
         tel_numberFill.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -157,24 +151,6 @@ public class RegisterController {
                                     break;
                                 }
                             }
-//                            if ((str.charAt(j) < 48) || ((str.charAt(j) > 57) && (str.charAt(j) < 65)) || ((str.charAt(j) > 90) && (str.charAt(j) < 97)) || (str.charAt(j) > 122)) {
-//                                haveSign = true;
-//                                Alert alert = new Alert(Alert.AlertType.WARNING,
-//                                        "Input have special sign, please check again", ButtonType.OK);
-//                                alert.showAndWait();
-//                                if(i==0){
-//                                    userFill.setStyle("-fx-border-color: red");;
-//                                }else if(i==1){
-//                                    passwordFill.clear();
-//                                    repasswordFill.clear();
-//                                }else if(i==2){
-//                                    firstnameFill.setStyle("-fx-border-color: red");
-//                                }else if(i==3){
-//                                    lastnameFill.setStyle("-fx-border-color: red");;
-//                                }
-//
-//                                break;
-//                            }
                         }
                         if(i==5){ //tel num
                             if((str.charAt(j) < 48) ||(str.charAt(j) > 57)){

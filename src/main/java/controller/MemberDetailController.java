@@ -1,5 +1,6 @@
 package controller;
 
+import ConnectDataBase.CustomerDB;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,7 +39,7 @@ public class MemberDetailController {
     private TextField zipcodeField;
     @FXML
     private Button editBtn,backBtn;
-
+    CustomerDB customerDB=new CustomerDB();
 
     public void initialize(){
         Platform.runLater(new Runnable() {
@@ -67,5 +68,24 @@ public class MemberDetailController {
 
     public void setData(Customer data){
         this.data = data;
+    }
+
+    @FXML
+    public void handleeditBtn(ActionEvent event) throws IOException {
+        String f=firstnameFill.getText();
+        String l=lastnameFill.getText();
+        String a =addressFill.getText();
+        String t =tel_numberFill.getText();
+        String d = districtField.getText();
+        String p = provinceField.getText();
+        String z = zipcodeField.getText();
+
+        Customer customer=new Customer(a,d,p,z,f,l,t);
+        customerDB.update(customer);
+        editBtn= (Button) event.getSource();
+        Stage stage = (Stage)editBtn.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MemberList.fxml"));
+        stage.setScene(new Scene((Parent) loader.load()));
+        stage.show();
     }
 }

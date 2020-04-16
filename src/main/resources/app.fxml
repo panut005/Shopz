@@ -31,7 +31,7 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <Button fx:id="findMember" layoutX="569.0" layoutY="193.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: grey;" text="Find Member" textFill="WHITE">
+      <Button fx:id="findMember" layoutX="570.0" layoutY="233.0" mnemonicParsing="false" onAction="#handlebuttonfindMember" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: grey;" text="Find Member" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
@@ -70,5 +70,6 @@
             <Font size="23.0" />
          </font>
       </Button>
+      <TextField fx:id="findCus" layoutX="570.0" layoutY="177.0" prefHeight="45.0" prefWidth="185.0" promptText="telNumber" />
    </children>
 </AnchorPane>

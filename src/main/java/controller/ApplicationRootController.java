@@ -1,5 +1,8 @@
 package controller;
+import ConnectDataBase.CustomerDB;
+import ConnectDataBase.ItemSaleDB;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.Customer;
 import model.Item;
 import model.Product;
 import ConnectDataBase.ProductDataBase;
@@ -49,13 +52,14 @@ public class ApplicationRootController implements Initializable{
     @FXML
     private  TableColumn Item,Price,Quantity,Amount,ID;
     @FXML
-    private Text total;
+    private Text total,nameCus;
     @FXML
-    private TextField QuantityTF,search;
+    private TextField QuantityTF,search,findCus;
     private ProductDataBase productDataBase =new ProductDataBase();
     ArrayList<Item> arrayList=new ArrayList<>();
     static ArrayList<Item> arrayListStatic=new ArrayList<>();
-
+    CustomerDB customerDB=new CustomerDB();
+    Customer customer=null;
 
     //webcam---------------------------------------------------------------------------------
 
@@ -213,7 +217,6 @@ public class ApplicationRootController implements Initializable{
     @FXML
     public void handlebuttonAdd(ActionEvent event) throws IOException{
 
-        System.out.println("ssssssssssssssssssssssssssssssssssss");
         String s= search.getText();
         int q = Integer.parseInt(QuantityTF.getText());
         Product product =productDataBase.getProduct(s);
@@ -277,22 +280,14 @@ public class ApplicationRootController implements Initializable{
     }
 
     @FXML
-    public void handlebuttonregister(ActionEvent event) throws IOException {
-        register= (Button) event.getSource();
-        Stage stage = (Stage)register.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Register.fxml"));
-
-        onClose();
-        stage.setScene(new Scene((Parent) loader.load()));
-
-        stage.show();
-    }
-
-    @FXML
     public void handlebuttonfindMember(ActionEvent event) throws IOException {
-
-
-
+        String f=findCus.getText();
+        if(!f.isEmpty()){
+            customer=customerDB.getCustomer(f);
+            nameCus.setText("Hello "+customer.getFirstname());
+            findCus.setVisible(false);
+            findMember.setVisible(false);
+        }
     }
 
     public String getYear(){

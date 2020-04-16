@@ -43,33 +43,6 @@ public class CustomerDB {
         return customers;
     }
 
-//    public static void login(String username, String password){
-//        try{
-//            Class.forName(dbName);
-//            Connection conn = DriverManager.getConnection(dbURL);
-//
-//            Statement myStmt = conn.createStatement();
-//
-//            ResultSet myRs  = myStmt.executeQuery("select * from Customer where username" +
-//                    " = '"  + username + "' and password = '" + password+ "'" );
-//
-//            if(myRs.next()){
-//                String username1 =myRs.getString("username");
-//                String pass= myRs.getString("password");
-//                String firstname = myRs.getString("first_name");
-//                String lastname = myRs.getString("last_name");
-//                String address = myRs.getString("address");
-//                String tel_number = myRs.getString("tel_number");
-//
-//                customerToken = new Customer(username1,pass,address,firstname,lastname,tel_number);
-//                conn.close();
-//            }
-//
-//        }
-//        catch (Exception exc){
-//            exc.printStackTrace();
-//        }
-//    }
 
     public static void register(String firstname,String lastname,
                                 String address, String district, String province, String zipcode,
@@ -102,36 +75,37 @@ public class CustomerDB {
 
     }
 
-//    public static boolean checkUsername(String username){ // true if have data in DB
-//        Connection conn = null;
-//        try{
-//            Class.forName(dbName);
-//            conn = DriverManager .getConnection(dbURL) ;
-//            Statement myStmt = conn.createStatement();
-//
-//            ResultSet myRs  = myStmt.executeQuery("select * from Customer where username" +
-//                        " = '"  + username + "'" );
-//
-//            String username1 =myRs.getString("username");
-//            conn.close();
-//            if(username1!=null){
-//                System.out.println(username1);
-//                return true;
-//            }
-//            return false;
-//
-//        }
-//        catch (Exception exc){
-//            try {
-//                conn.close();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//            return false;
-////            exc.printStackTrace();
-//        }
-//
-//    }
+    public Customer getCustomer(String tel_number){
+        Customer customer = null;
+        try{
+
+            Class.forName(dbName);
+            Connection connection = DriverManager.getConnection(dbURL);
+            if(connection != null){
+
+                String query = "select * from Customer WHERE Customer.tel_number='"+tel_number+"'";
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(query);
+                String firstname  = resultSet.getString("first_name");
+                String lastname   = resultSet.getString("last_name");
+                String address    = resultSet.getString("address");
+                String district   = resultSet.getString("district");
+                String province   = resultSet.getString("province");
+                String zipcode    = resultSet.getString("zipcode");
+                String tel        = resultSet.getString("tel_number");
+                customer=new Customer(address,district,province,zipcode,firstname,lastname,tel);
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return customer;
+    }
+
+
+
 
     public static boolean  checkTelephoneNo(String tel_number)  { // true if have data in DB
         Connection conn = null;

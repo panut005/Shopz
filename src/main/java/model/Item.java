@@ -6,13 +6,33 @@ public class Item {
     private double price;
     private int quantity;
     private double amount;
+    private String month;
+    private String year;
 
-    public Item(String id, String item, double price, int quantity, double amount) {
+    public Item(String id, String item, double price, int quantity, double amount,String month,String year) {
         this.id = id;
         this.item = item;
         this.price = price;
         this.quantity = quantity;
         this.amount = amount;
+        this.month=month;
+        this.year=year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 
     public String getItem() {
@@ -53,5 +73,18 @@ public class Item {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id='" + id + '\'' +
+                ", item='" + item + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", amount=" + amount +
+                ", month='" + month + '\'' +
+                ", year='" + year + '\'' +
+                '}';
     }
 }

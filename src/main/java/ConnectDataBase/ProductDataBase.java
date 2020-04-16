@@ -87,7 +87,6 @@ public class ProductDataBase {
         }
     }
     public Product getProduct(String productID){
-        System.out.println("SSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
             Product product = null;
         try{
             System.out.println(productID);
@@ -142,7 +141,6 @@ public class ProductDataBase {
     }
 
     public static Product getProductAS(String productID){
-        System.out.println("SSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
         Product productAS = null;
         try{
             System.out.println(productID);

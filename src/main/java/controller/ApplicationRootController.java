@@ -8,12 +8,12 @@ import com.github.sarxos.webcam.WebcamPanel;
 import com.github.sarxos.webcam.WebcamResolution;
 import com.google.zxing.*;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
-import com.google.zxing.client.j2se.MatrixToImageWriter;
+
 import com.google.zxing.common.HybridBinarizer;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.concurrent.Task;
+
 import javafx.embed.swing.SwingFXUtils;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
@@ -29,16 +29,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLOutput;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
@@ -192,7 +190,7 @@ public class ApplicationRootController implements Initializable{
         Price.setStyle("-fx-alignment: center-right;");
         Quantity.setStyle("-fx-alignment: center-right;");
         Amount.setStyle("-fx-alignment: center-right;");
-        arrayList.add(new Item("-","-",0,0,0));
+        arrayList.add(new Item("-","-",0,0,0,getMonth(),getYear()));
         showTable(arrayList);
         tableView.setEditable(true);
     }
@@ -224,7 +222,7 @@ public class ApplicationRootController implements Initializable{
         }
         double p =product.getPrice();
         double a =p*q;
-        arrayList.add(new Item(s,product.getName(),p,q,a));
+        arrayList.add(new Item(s,product.getName(),p,q,a,getMonth(),getYear()));
         showTable(arrayList);
 
     }
@@ -239,7 +237,7 @@ public class ApplicationRootController implements Initializable{
         double p =product.getPrice();
         double a =p*q;
 
-        arrayList.add(new Item(s,product.getName(),p,q,a));
+        arrayList.add(new Item(s,product.getName(),p,q,a,getMonth(),getYear()));
         showTable(arrayList);
 
     }
@@ -293,6 +291,21 @@ public class ApplicationRootController implements Initializable{
     @FXML
     public void handlebuttonfindMember(ActionEvent event) throws IOException {
 
+    }
+
+    public String getYear(){
+        String y="";
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
+        Date date = new Date();
+        y=formatter.format(date);
+        return y;
+    }
+    public String getMonth(){
+        String m="";
+        SimpleDateFormat formatter = new SimpleDateFormat("MM");
+        Date date = new Date();
+        m=formatter.format(date);
+        return m;
     }
 
 }

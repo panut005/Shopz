@@ -1,5 +1,6 @@
 package controller;
 
+import ConnectDataBase.ItemSaleDB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,10 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Item;
@@ -20,12 +18,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class billController {
+
+
+    ItemSaleDB itemSaleDB=new ItemSaleDB();
+
     @FXML
     private TableView<Item> tableView;
     @FXML
     private TableColumn Item,Price,Quantity,Amount,ID;
     @FXML
-    Button buttonBack;
+    Button buttonBack,pay;
 
     @FXML
     Label total;
@@ -39,22 +41,16 @@ public class billController {
     public void handlebuttonBack(ActionEvent event) throws IOException {
         buttonBack= (Button) event.getSource();
         Stage stage = (Stage)buttonBack.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/home.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/app.fxml"));
         stage.setScene(new Scene((Parent) loader.load()));
         stage.show();
     }
 
 
     public void createTable(){
-       // ID.setCellValueFactory(new PropertyValueFactory<Product,String>("id"));
         Item.setCellValueFactory(new PropertyValueFactory<Product,String>("item"));
-       // Price.setCellValueFactory(new PropertyValueFactory<Product,Double>("price"));
-      //  Quantity.setCellValueFactory(new PropertyValueFactory<Product, Integer>("quantity"));
         Amount.setCellValueFactory(new PropertyValueFactory<Product,Double>("amount"));
-       // ID.setStyle("-fx-alignment: CENTER;");
         Item.setStyle("-fx-alignment: CENTER;");
-//        Price.setStyle("-fx-alignment: center-right;");
-//        Quantity.setStyle("-fx-alignment: center-right;");
         Amount.setStyle("-fx-alignment: center-right;");
         ArrayList<Item> arrayList=arrayListStatic;
         showTable(arrayList);
@@ -77,4 +73,22 @@ public class billController {
         }
         return temp;
     }
+
+    @FXML
+    public void handlepay(ActionEvent event) throws IOException {
+        ArrayList<Item> arrayList= arrayListStatic;
+       System.out.println(arrayList.size());
+        for (Item item : arrayList) {
+            System.out.println(item);
+            itemSaleDB.addItemToDB(item);
+        }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Complete",ButtonType.OK);
+        alert.showAndWait();
+        pay= (Button) event.getSource();
+        Stage stage = (Stage)pay.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/app.fxml"));
+        stage.setScene(new Scene((Parent) loader.load()));
+        stage.show();
+    }
+
 }

@@ -130,8 +130,7 @@ public class itemlistController {
             srcImage="";
             abc.setImage(null);
             showTable();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Complete",ButtonType.OK);
-            alert.showAndWait();
+
         }
     }
     void showTable(){

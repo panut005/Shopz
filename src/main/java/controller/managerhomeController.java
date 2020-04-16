@@ -35,4 +35,13 @@ public class managerhomeController {
         stage.show();
 
     }
+    @FXML
+    public void handlebuttonFinance(ActionEvent event) throws IOException {
+        buttonFinance= (Button) event.getSource();
+        Stage stage = (Stage) buttonFinance.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/finance.fxml"));
+        stage.setScene(new Scene((Parent) loader.load()));
+        stage.show();
+
+    }
 }

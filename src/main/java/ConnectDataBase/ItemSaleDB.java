@@ -9,23 +9,25 @@ import java.util.ArrayList;
 public class ItemSaleDB {
     private static String dbURL = "jdbc:sqlite:Database.db";
     private static String dbName = "org.sqlite.JDBC";
+
+
     public ArrayList<Item> getAllItem(){
         ArrayList<Item>products=new ArrayList<>();
         try{
             Class.forName(dbName);
             Connection connection = DriverManager.getConnection(dbURL);
             if(connection != null){
-                String query = "select * from Product";
+                String query = "select * from item";
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()){
                     String id =resultSet.getString("ID");
-                    String name=resultSet.getString("Name");
-                    int q = resultSet.getInt("Quantity");
-                    double p = resultSet.getDouble("Price");
-                    double a = resultSet.getDouble("Amount");
-                    String m = resultSet.getString("Month");
-                    String y =resultSet.getString("Year");
+                    String name=resultSet.getString("item");
+                    int q = resultSet.getInt("quantity");
+                    double p = resultSet.getDouble("price");
+                    double a = resultSet.getDouble("amount");
+                    String m = resultSet.getString("month");
+                    String y =resultSet.getString("year");
                     products.add(new Item(id,name,p,q,a,m,y));
                 }
                 connection.close();

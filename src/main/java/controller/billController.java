@@ -54,7 +54,6 @@ public class billController {
         Amount.setStyle("-fx-alignment: center-right;");
         ArrayList<Item> arrayList=arrayListStatic;
         showTable(arrayList);
-        tableView.setEditable(true);
     }
 
     void showTable(ArrayList<Item> arrayList){

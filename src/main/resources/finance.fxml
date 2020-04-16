@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FinanceController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1427.0" />
+        <Button fx:id="buttonBack" layoutX="1193.0" layoutY="925.0" mnemonicParsing="false" onAction="#handlebuttonBack" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: blue;" text="Back" textFill="WHITE">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Button>
+        <TableView fx:id="tableView" layoutX="29.0" layoutY="178.0" prefHeight="787.0" prefWidth="632.0">
+            <columns>
+                <TableColumn fx:id="ID" prefWidth="113.0" text="ID" />
+                <TableColumn fx:id="Item" minWidth="0.0" prefWidth="289.0" text="Name" />
+                <TableColumn fx:id="Quantity" minWidth="0.0" prefWidth="117.0" text="Quantity" />
+                <TableColumn fx:id="Amount" prefWidth="113.0" text="Amount" />
+            </columns>
+        </TableView>
+        <TextField layoutX="568.0" layoutY="14.0" prefHeight="108.0" prefWidth="288.0" style="-fx-background-color: #B2BB1E;" text="Finance">
+            <font>
+                <Font size="58.0" />
+            </font>
+        </TextField>
+      <ChoiceBox fx:id="boxM" accessibleRole="BUTTON" layoutX="756.0" layoutY="178.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="119.0" />
+      <Label fx:id="total" layoutX="712.0" layoutY="791.0" prefHeight="54.0" prefWidth="583.0" text="Total: ">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

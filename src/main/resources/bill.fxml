@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.billController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.billController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1436.0" />
       <TextField layoutX="599.0" layoutY="14.0" prefHeight="111.0" prefWidth="144.0" style="-fx-background-color: #B2BB1E;" text="Bill">
@@ -33,27 +33,22 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <Button layoutX="785.0" layoutY="669.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="477.0" style="-fx-background-color: brown;" text="Gift Card" textFill="WHITE">
+      <Button layoutX="785.0" layoutY="669.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="477.0" style="-fx-background-color: brown;" text="Redeem Gift Card" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <Label layoutX="785.0" layoutY="275.0" prefHeight="54.0" prefWidth="408.0" text="Subtotal:  ">
+      <Label fx:id="total" layoutX="781.0" layoutY="251.0" prefHeight="54.0" prefWidth="583.0" text="Total">
          <font>
             <Font size="37.0" />
          </font>
       </Label>
-      <Label fx:id="total" layoutX="785.0" layoutY="365.0" prefHeight="54.0" prefWidth="583.0" text="Total: ">
+      <Label layoutX="781.0" layoutY="337.0" prefHeight="54.0" prefWidth="423.0" text="Receive ">
          <font>
             <Font size="37.0" />
          </font>
       </Label>
-      <Label layoutX="785.0" layoutY="451.0" prefHeight="54.0" prefWidth="423.0" text="Receive:">
-         <font>
-            <Font size="37.0" />
-         </font>
-      </Label>
-      <Label layoutX="785.0" layoutY="551.0" prefHeight="54.0" prefWidth="408.0" text="Change:">
+      <Label layoutX="781.0" layoutY="424.0" prefHeight="54.0" prefWidth="423.0" text="Change">
          <font>
             <Font size="37.0" />
          </font>

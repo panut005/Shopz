@@ -13,7 +13,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Item;
 import model.Product;
+import model.Voucher;
+
 import static controller.ApplicationRootController.arrayListStatic;
+
+import static controller.VoucherController.arrayListVocher;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -27,10 +31,12 @@ public class billController {
     @FXML
     private TableColumn Item,Price,Quantity,Amount,ID;
     @FXML
-    Button buttonBack,pay;
-
+    Button buttonBack,pay,redeem;
     @FXML
-    Label total,grandtotal,vat;
+    TextField code;
+    double t=0;
+    @FXML
+    Label total,grandtotal,vat,discount;
     @FXML
     public void initialize(){
         createTable();
@@ -58,7 +64,6 @@ public class billController {
 
     void showTable(ArrayList<Item> arrayList){
         tableView.setItems(addData(arrayList));
-        double t=0;
         for (Item i:arrayList){
             t=t+i.getAmount();
         }
@@ -93,5 +98,20 @@ public class billController {
         stage.setScene(new Scene((Parent) loader.load()));
         stage.show();
     }
+
+
+
+    @FXML
+    public void handleRedeem(ActionEvent event) throws IOException {
+        for (Voucher voucher : arrayListVocher) {
+            if(code.getText().equals(voucher.getCodename())){
+                discount.setText("discount: "+voucher.getDiscount());
+                grandtotal.setText("Grand Total: "+String.format("%,.2f",t-Integer.parseInt(voucher.getDiscount()))+" baht");
+                break;
+            }
+        }
+
+    }
+
 
 }

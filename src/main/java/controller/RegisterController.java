@@ -101,7 +101,7 @@ public class RegisterController {
     void onActionBackBtn(ActionEvent event) throws IOException {
         buttonBack= (Button) event.getSource();
         Stage stage = (Stage)buttonBack.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/home.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/managerhome.fxml"));
         stage.setScene(new Scene((Parent) loader.load()));
 
         stage.show();

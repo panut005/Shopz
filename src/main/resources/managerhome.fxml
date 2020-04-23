@@ -9,12 +9,12 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.managerhomeController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#006664" height="140.0" layoutX="-23.0" layoutY="-1.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="1422.0" />
-      <Button fx:id="buttonStock" layoutX="115.0" layoutY="348.0" mnemonicParsing="false" onAction="#handlebuttonStock" prefHeight="390.0" prefWidth="360.0" style="-fx-background-color: blue;" text="Stock" textFill="WHITE">
+      <Button fx:id="buttonStock" layoutX="252.0" layoutY="154.0" mnemonicParsing="false" onAction="#handlebuttonStock" prefHeight="390.0" prefWidth="360.0" style="-fx-background-color: blue;" text="Stock" textFill="WHITE">
          <font>
             <Font size="63.0" />
          </font>
       </Button>
-      <Button fx:id="buttonFinance" layoutX="533.0" layoutY="348.0" mnemonicParsing="false" onAction="#handlebuttonFinance" prefHeight="390.0" prefWidth="360.0" style="-fx-background-color: red;" text="Finance" textFill="WHITE">
+      <Button fx:id="buttonFinance" layoutX="252.0" layoutY="562.0" mnemonicParsing="false" onAction="#handlebuttonFinance" prefHeight="390.0" prefWidth="360.0" style="-fx-background-color: red;" text="Finance" textFill="WHITE">
          <font>
             <Font size="63.0" />
          </font>
@@ -24,7 +24,17 @@
             <Font size="58.0" />
          </font>
       </TextField>
-      <Button fx:id="buttomMember" layoutX="952.0" layoutY="347.0" mnemonicParsing="false" onAction="#handlebuttonMember" prefHeight="390.0" prefWidth="360.0" style="-fx-background-color: green;" text="Member" textFill="WHITE">
+      <Button fx:id="buttomMember" layoutX="698.0" layoutY="154.0" mnemonicParsing="false" onAction="#handlebuttonMember" prefHeight="390.0" prefWidth="360.0" style="-fx-background-color: green;" text="Member" textFill="WHITE">
+         <font>
+            <Font size="63.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonBack" layoutX="1192.0" layoutY="922.0" mnemonicParsing="false" onAction="#handlebuttonBack" prefHeight="73.0" prefWidth="185.0" style="-fx-background-color: blue;" text="Back" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonVoucher" layoutX="698.0" layoutY="562.0" mnemonicParsing="false" onAction="#handlebuttonVoucher" prefHeight="390.0" prefWidth="360.0" style="-fx-background-color: skyblue;" text="Voucher" textFill="WHITE">
          <font>
             <Font size="63.0" />
          </font>

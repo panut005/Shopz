@@ -14,7 +14,7 @@ import java.io.IOException;
 public class managerhomeController {
 
     @FXML
-    private Button buttonStock,buttonFinance,buttonMember;
+    private Button buttonStock,buttonFinance,buttonMember,buttonBack,buttonVoucher;
 
     @FXML
     public void handlebuttonStock(ActionEvent event) throws IOException {
@@ -44,4 +44,25 @@ public class managerhomeController {
         stage.show();
 
     }
+
+
+    @FXML
+    public void handlebuttonBack(ActionEvent event) throws IOException {
+        buttonBack= (Button) event.getSource();
+        Stage stage = (Stage)buttonBack.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/home.fxml"));
+        stage.setScene(new Scene((Parent) loader.load()));
+        stage.show();
+    }
+
+    @FXML
+    public void handlebuttonVoucher(ActionEvent event) throws IOException {
+        buttonVoucher= (Button) event.getSource();
+        Stage stage = (Stage) buttonVoucher.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Voucher.fxml"));
+        stage.setScene(new Scene((Parent) loader.load()));
+        stage.show();
+
+    }
+
 }

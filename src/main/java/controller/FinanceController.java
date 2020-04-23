@@ -53,7 +53,7 @@ public class FinanceController {
     public void handlebuttonBack(ActionEvent event) throws IOException {
         buttonBack= (Button) event.getSource();
         Stage stage = (Stage)buttonBack.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/home.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/managerhome.fxml"));
         stage.setScene(new Scene((Parent) loader.load()));
         stage.show();
     }
@@ -138,11 +138,13 @@ public class FinanceController {
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
             ArrayList<Item> arrayList=itemSaleDB.getAllItem();
+
             for (model.Item item : arrayList) {
                 if (item.getMonth().equals("04")){
                     temp.add(item);
                 }
             }
+            temp=checksame(temp);
             showTable(temp);
         }else if(event.equals("05")){
             tableView.getItems().clear();
@@ -226,5 +228,44 @@ public class FinanceController {
             }
             showTable(temp);
         }
+    }
+
+    public ArrayList<Item> checksame(ArrayList<Item> data) {
+        ArrayList<Item> nosame =new ArrayList<>();
+
+        for (Item datum : data) {
+           if (notsame(nosame,datum.getItem())){
+               nosame.add(datum);
+           }else {
+               nosame=addsame(nosame,datum);
+           }
+        }
+
+        for (model.Item item : nosame) {
+            System.out.println(item.getItem());
+        }
+        return nosame;
+    }
+
+    public Boolean notsame(ArrayList<Item> arrayList,String name){
+        for (Item s : arrayList) {
+            if(s.getItem().equals(name)){
+
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public ArrayList<Item> addsame(ArrayList<Item> arrayList,Item string){
+        for (model.Item item : arrayList) {
+            if(item.getItem().equals(string.getItem())){
+                item.setQuantity(item.getQuantity()+string.getQuantity());
+                item.setAmount(item.getPrice()*item.getQuantity());
+                break;
+            }
+        }
+
+        return arrayList;
     }
 }

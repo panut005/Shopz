@@ -291,9 +291,18 @@ public class ApplicationRootController implements Initializable{
         String f=findCus.getText();
         if(!f.isEmpty()){
             customer=customerDB.getCustomer(f);
-            nameCus.setText("Hello "+customer.getFirstname());
-            findCus.setVisible(false);
-            findMember.setVisible(false);
+            if(customer==null){
+                Alert alert = new Alert(Alert.AlertType.ERROR, "tel. number is not found.",ButtonType.OK);
+                alert.showAndWait();
+            }else {
+                nameCus.setText("Hello "+customer.getFirstname());
+                findCus.setVisible(false);
+                findMember.setVisible(false);
+            }
+
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Fill tel. number pls.",ButtonType.OK);
+            alert.showAndWait();
         }
     }
 

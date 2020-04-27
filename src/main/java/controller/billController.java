@@ -40,6 +40,7 @@ public class billController {
     @FXML
     public void initialize(){
         createTable();
+        discount.setVisible(false);
 
     }
 
@@ -103,12 +104,20 @@ public class billController {
 
     @FXML
     public void handleRedeem(ActionEvent event) throws IOException {
+        int s =0;
         for (Voucher voucher : arrayListVocher) {
             if(code.getText().equals(voucher.getCodename())){
+                discount.setVisible(true);
                 discount.setText("discount: "+voucher.getDiscount());
                 grandtotal.setText("Grand Total: "+String.format("%,.2f",t-Integer.parseInt(voucher.getDiscount()))+" baht");
+                voucher.setLimit(voucher.getLimit()-1);
+                s++;
                 break;
             }
+        }
+        if (s==0){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "This Redeem code is not found.",ButtonType.OK);
+            alert.showAndWait();
         }
 
     }

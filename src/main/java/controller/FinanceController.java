@@ -50,6 +50,10 @@ public class FinanceController {
         boxY.getItems().add("2020");
         boxY.getSelectionModel().select(0);
         box.getSelectionModel().select(0);
+        box.getSelectionModel().selectedItemProperty()
+                .addListener( (ObservableValue<? extends String> observable, String oldValue, String newValue)
+                        -> changebox(newValue));
+
     }
 
 

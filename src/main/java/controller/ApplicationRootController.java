@@ -220,14 +220,20 @@ public class ApplicationRootController implements Initializable{
         String s= search.getText();
         int q = Integer.parseInt(QuantityTF.getText());
         Product product =productDataBase.getProduct(s);
-        if(arrayList.get(0).getItem().equals("-")){
-            arrayList.remove(0);
+        if(product!=null){
+            if(arrayList.get(0).getItem().equals("-")){
+                arrayList.remove(0);
+            }
+            double p =product.getPrice();
+            double a =p*q;
+            arrayList.add(new Item(s,product.getName(),p,q,a,getMonth(),getYear(),product.getType()));
+            showTable(arrayList);
+            search.clear();
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "This product code is not found.",ButtonType.OK);
+            alert.showAndWait();
         }
-        double p =product.getPrice();
-        double a =p*q;
-        arrayList.add(new Item(s,product.getName(),p,q,a,getMonth(),getYear()));
-        showTable(arrayList);
-        search.clear();
+
 
     }
 
@@ -241,7 +247,7 @@ public class ApplicationRootController implements Initializable{
         double p =product.getPrice();
         double a =p*q;
 
-        arrayList.add(new Item(s,product.getName(),p,q,a,getMonth(),getYear()));
+        arrayList.add(new Item(s,product.getName(),p,q,a,getMonth(),getYear(),product.getType()));
         showTable(arrayList);
 
     }

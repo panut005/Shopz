@@ -8,8 +8,9 @@ public class Item {
     private double amount;
     private String month;
     private String year;
+    private String type;
 
-    public Item(String id, String item, double price, int quantity, double amount,String month,String year) {
+    public Item(String id, String item, double price, int quantity, double amount,String month,String year,String type) {
         this.id = id;
         this.item = item;
         this.price = price;
@@ -17,6 +18,7 @@ public class Item {
         this.amount = amount;
         this.month=month;
         this.year=year;
+        this.type=type;
     }
 
     public String getMonth() {
@@ -75,6 +77,24 @@ public class Item {
         this.amount = amount;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Item(String id, String item, double price, int quantity, double amount, String month, String year) {
+        this.id = id;
+        this.item = item;
+        this.price = price;
+        this.quantity = quantity;
+        this.amount = amount;
+        this.month = month;
+        this.year = year;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
@@ -85,6 +105,7 @@ public class Item {
                 ", amount=" + amount +
                 ", month='" + month + '\'' +
                 ", year='" + year + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

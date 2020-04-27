@@ -28,7 +28,8 @@ public class ItemSaleDB {
                     double a = resultSet.getDouble("amount");
                     String m = resultSet.getString("month");
                     String y =resultSet.getString("year");
-                    products.add(new Item(id,name,p,q,a,m,y));
+                    String t =resultSet.getString("type");
+                    products.add(new Item(id,name,p,q,a,m,y,t));
                 }
                 connection.close();
             }
@@ -64,9 +65,9 @@ public class ItemSaleDB {
             Class.forName(dbName);
             Connection connection = DriverManager.getConnection(dbURL);
             if(connection != null){
-                String query = "insert into item (id,item,price,quantity,amount,month,year) values " +
+                String query = "insert into item (id,item,price,quantity,amount,month,year,type) values " +
                         "('"+item.getId()+"','"+item.getItem()+"',"+item.getPrice()+","+item.getQuantity()+
-                        ",'"+item.getAmount()+"','"+item.getMonth()+"','"+item.getYear()+"')";
+                        ",'"+item.getAmount()+"','"+item.getMonth()+"','"+item.getYear()+"','"+item.getType()+"')";
                 Statement p = connection.createStatement();
                 p.executeUpdate(query);
                 connection.close();

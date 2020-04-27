@@ -9,6 +9,7 @@ public class Product {
     private int quantity;
     private String quantitys;
     private String urlImage;
+    private String type;
 
     public Product(String id, String name, double price, int quantity, String urlImage) {
         this.id = id;
@@ -17,12 +18,16 @@ public class Product {
         this.quantity = quantity;
         this.urlImage = urlImage;
     }
-    public Product(String id, String name, double price, int quantity) {
+
+    public Product(String id, String name, double price, int quantity, String urlImage, String type) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.urlImage = urlImage;
+        this.type = type;
     }
+
     public Product(String id, String name, String price, String quantity, String urlImage) {
         this.id = id;
         this.name = name;
@@ -37,6 +42,7 @@ public class Product {
         this.prices =price;
         this.quantitys = quantity;
     }
+
 
     public String getPrices() {
         return prices;
@@ -91,5 +97,25 @@ public class Product {
     }
     public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
+    }
+
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

@@ -27,6 +27,9 @@ public class FinanceController {
     ChoiceBox<String> boxM = new ChoiceBox<String>();
     @FXML
     ChoiceBox<String> boxY = new ChoiceBox<String>();
+
+    @FXML
+    ChoiceBox<String> box = new ChoiceBox<String>();
     @FXML
     private TableView<Item> tableView;
     @FXML
@@ -46,6 +49,7 @@ public class FinanceController {
         boxM.getSelectionModel().select(0);
         boxY.getItems().add("2020");
         boxY.getSelectionModel().select(0);
+        box.getSelectionModel().select(0);
     }
 
 
@@ -82,6 +86,15 @@ public class FinanceController {
         boxM.getItems().add("10");
         boxM.getItems().add("11");
         boxM.getItems().add("12");
+        box.getItems().add("All");
+        box.getItems().add("Sport");
+        box.getItems().add("Clothing");
+        box.getItems().add("Appliance");
+        box.getItems().add("Drug");
+        box.getItems().add("Food");
+        box.getItems().add("Beverage");
+        box.getItems().add("Stationary");
+        box.getItems().add("Other");
     }
     void showTable(ArrayList<Item> arrayList){
         tableView.setItems(addData(arrayList));
@@ -113,7 +126,67 @@ public class FinanceController {
                     temp.add(item);
                 }
             }
-            showTable(temp);
+            if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }else if(event.equals("02")){
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
@@ -122,8 +195,67 @@ public class FinanceController {
                 if (item.getMonth().equals("02")){
                     temp.add(item);
                 }
+            }if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
             }
-            showTable(temp);
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }else if(event.equals("03")){
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
@@ -133,7 +265,67 @@ public class FinanceController {
                     temp.add(item);
                 }
             }
-            showTable(temp);
+            if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }else if(event.equals("04")){
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
@@ -156,7 +348,67 @@ public class FinanceController {
                     temp.add(item);
                 }
             }
-            showTable(temp);
+            if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }else if(event.equals("06")){
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
@@ -166,7 +418,67 @@ public class FinanceController {
                     temp.add(item);
                 }
             }
-            showTable(temp);
+            if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }else if(event.equals("07")){
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
@@ -176,7 +488,67 @@ public class FinanceController {
                     temp.add(item);
                 }
             }
-            showTable(temp);
+            if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }else if(event.equals("08")){
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
@@ -186,7 +558,67 @@ public class FinanceController {
                     temp.add(item);
                 }
             }
-            showTable(temp);
+            if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }else if(event.equals("09")){
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
@@ -196,7 +628,67 @@ public class FinanceController {
                     temp.add(item);
                 }
             }
-            showTable(temp);
+            if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }else if (event.equals("10")){
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
@@ -206,7 +698,67 @@ public class FinanceController {
                     temp.add(item);
                 }
             }
-            showTable(temp);
+            if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }else if (event.equals("11")){
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
@@ -216,7 +768,67 @@ public class FinanceController {
                     temp.add(item);
                 }
             }
-            showTable(temp);
+            if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }else if (event.equals("12")){
             tableView.getItems().clear();
             ArrayList<Item> temp=new ArrayList<>();
@@ -226,7 +838,67 @@ public class FinanceController {
                     temp.add(item);
                 }
             }
-            showTable(temp);
+            if(box.getValue().equals("All")){
+                showTable(temp);
+            }else if(box.getValue().equals("Sport")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Sport")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Clothing")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Clothing")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            } else if(box.getValue().equals("Appliance")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Appliance")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Drug")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Drug")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Food")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Food")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Beverage")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Beverage")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+            else if(box.getValue().equals("Stationary")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Stationary")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }else if(box.getValue().equals("Other")){
+                for (model.Item item : temp) {
+                    if (item.getType().equals("Other")){
+                        temp.remove(item);
+                    }
+                }
+                showTable(temp);
+            }
+
         }
     }
 

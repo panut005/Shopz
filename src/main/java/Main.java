@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
-public class BarcodeScannerApplication extends Application {
+public class Main extends Application {
 
     
 

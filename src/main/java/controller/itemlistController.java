@@ -47,6 +47,8 @@ public class itemlistController {
     private String srcImage="";
     private Button Menu;
     public static String PRODUCT_ID="";
+    @FXML
+    ChoiceBox<String> box = new ChoiceBox<String>();
 
     @FXML
     public void initialize(){
@@ -62,6 +64,14 @@ public class itemlistController {
         name.setCellFactory(TextFieldTableCell.forTableColumn());
         quantity.setCellFactory(TextFieldTableCell.forTableColumn());
         price.setCellFactory(TextFieldTableCell.forTableColumn());
+        box.getItems().add("Sport");
+        box.getItems().add("Clothing");
+        box.getItems().add("Appliance");
+        box.getItems().add("Drug");
+        box.getItems().add("Food");
+        box.getItems().add("Beverage");
+        box.getItems().add("Stationary");
+        box.getItems().add("Other");
     }
 
     public ObservableList<Product> addData(ArrayList<Product> data){
@@ -121,7 +131,8 @@ public class itemlistController {
             String name=textName.getText();
             int amonut=Integer.parseInt(textAmount.getText());
             double price=Double.parseDouble(textPrice.getText());
-            Product product=new Product(id,name,price,amonut,srcImage);
+            String type =box.getValue();
+            Product product=new Product(id,name,price,amonut,srcImage,type);
             productDataBase.addProductToDB(product);
             textID.clear();
             textName.clear();
